@@ -1,0 +1,265 @@
+{
+  "courses": [
+    {
+      "title": "Laughter Yoga",
+      "id": 1,
+      "courseLength": 5,
+      "classroom": true,
+      "imageUrl": "laughter_yoga.jpg",
+      "startDate": "2024-02-15T10:00:00.000Z",
+      "teacher": "Chuckles McLaughster",
+      "description": "Join us for a hilariously fun yoga experience that combines laughter and traditional yoga poses. Guaranteed to boost your mood!"
+    },
+    {
+      "title": "Advanced Silliness Studies",
+      "id": 2,
+      "courseLength": 8,
+      "classroom": true,
+      "imageUrl": "silliness_studies.jpg",
+      "startDate": "2024-03-10T15:30:00.000Z",
+      "teacher": "Dr. Gigglesworth",
+      "description": "Dive deep into the world of silliness with this advanced course. Learn the science behind being silly and embrace your inner goofball."
+    },
+    {
+      "title": "Introduction to Clown Physics",
+      "id": 3,
+      "courseLength": 12,
+      "classroom": false,
+      "imageUrl": "clown_physics.jpg",
+      "startDate": "2024-04-05T09:00:00.000Z",
+      "teacher": "Prof. Honkington",
+      "description": "Explore the fundamental principles of physics through the hilarious lens of clowning. No serious faces allowed!"
+    },
+    {
+      "title": "Extreme Tickling Techniques",
+      "id": 4,
+      "courseLength": 6,
+      "classroom": true,
+      "imageUrl": "tickling_techniques.jpg",
+      "startDate": "2024-05-20T13:45:00.000Z",
+      "teacher": "Tickle Master Flex",
+      "description": "Tickle your funny bone with this course on extreme tickling techniques. Warning: Side effects may include uncontrollable laughter!"
+    },
+    {
+      "title": "Whoopee Cushion Design 101",
+      "id": 5,
+      "courseLength": 4,
+      "classroom": false,
+      "imageUrl": "whoopee_cushion_design.jpg",
+      "startDate": "2024-06-12T11:30:00.000Z",
+      "teacher": "Pranksterella",
+      "description": "Master the art of whoopee cushion design and surprise your friends with perfectly timed pranks. Get ready for laughs and gasps!"
+    },
+    {
+      "title": "Napkin Folding for Clown Dinners",
+      "id": 6,
+      "courseLength": 7,
+      "classroom": true,
+      "imageUrl": "napkin_folding_clown_dinners.jpg",
+      "startDate": "2024-07-08T14:15:00.000Z",
+      "teacher": "Foldy McJester",
+      "description": "Learn the fine art of napkin folding with a clownish twist. Impress your guests at clown-themed dinners with creatively folded napkins."
+    },
+    {
+      "title": "Juggling Chainsaws for Beginners",
+      "id": 7,
+      "courseLength": 10,
+      "classroom": true,
+      "imageUrl": "juggling_chainsaws.jpg",
+      "startDate": "2024-08-22T09:30:00.000Z",
+      "teacher": "Blade Juggler Extraordinaire",
+      "description": "Embark on a thrilling journey into the world of juggling chainsaws. Safety first, laughs second. Disclaimer: Don't try this at home!"
+    },
+    {
+      "title": "Cartoon Character Impersonation",
+      "id": 8,
+      "courseLength": 8,
+      "classroom": false,
+      "imageUrl": "cartoon_impersonation.jpg",
+      "startDate": "2024-09-17T12:00:00.000Z",
+      "teacher": "Toony McVoiceover",
+      "description": "Bring your favorite cartoon characters to life with this course on cartoon character impersonation. Get ready to sound silly and have a blast!"
+    },
+    {
+      "title": "Dance Like No One's Watching",
+      "id": 9,
+      "courseLength": 6,
+      "classroom": true,
+      "imageUrl": "dance_like_no_one_watching.jpg",
+      "startDate": "2024-10-05T17:00:00.000Z",
+      "teacher": "Groovy McGrooverson",
+      "description": "Shake off your inhibitions and dance like no one's watching! This course is all about having fun on the dance floor, no judgment allowed."
+    },
+    {
+      "title": "Sarcasm Appreciation Workshop",
+      "id": 10,
+      "courseLength": 3,
+      "classroom": false,
+      "imageUrl": "sarcasm_appreciation.jpg",
+      "startDate": "2024-11-11T20:00:00.000Z",
+      "teacher": "Sir Snarkalot",
+      "description": "Sharpen your wit and master the art of sarcasm with Sir Snarkalot. Warning: Participants may develop a keen sense of humor."
+    },
+    {
+      "title": "Dress Like a Pirate Day",
+      "id": 11,
+      "courseLength": 1,
+      "classroom": false,
+      "imageUrl": "pirate_dress.jpg",
+      "startDate": "2024-12-09T14:30:00.000Z",
+      "teacher": "Captain Swashbuckle",
+      "description": "Arrr! Join Captain Swashbuckle and learn to dress like a pirate for a day. Eyepatches and parrots encouraged!"
+    },
+    {
+      "title": "Fruit Loop Immersion Experience",
+      "id": 12,
+      "courseLength": 1,
+      "classroom": false,
+      "imageUrl": "fruit_loop_bath_effect.jpg",
+      "startDate": "2026-06-05T12:30:00.000Z",
+      "teacher": "Captain Crunch",
+      "description": "Dive into a world of crunchiness! Immerse yourself in a bath filled with Fruit Loops and unlock the secrets of sensory delight. Warning: May cause extreme happiness and cravings for breakfast cereal."
+    },
+    {
+      "title": "Alien Communication 101",
+      "id": 13,
+      "courseLength": 5,
+      "classroom": false,
+      "imageUrl": "alien_communication.jpg",
+      "startDate": "2025-03-10T22:00:00.000Z",
+      "teacher": "Dr. Extraterrestrial",
+      "description": "Decode intergalactic messages and learn to communicate with beings from outer space. No prior extraterrestrial language skills required."
+    },
+    {
+      "title": "Underwater Basket Weaving",
+      "id": 14,
+      "courseLength": 2,
+      "classroom": true,
+      "imageUrl": "underwater_basket_weaving.jpg",
+      "startDate": "2025-04-01T14:00:00.000Z",
+      "teacher": "Aqua Artisan",
+      "description": "Dive into the world of basket weaving, literally! Create aquatic masterpieces while submerged in a giant aquarium."
+    },
+    {
+      "title": "Extreme Pogo Stick Jumping",
+      "id": 15,
+      "courseLength": 3,
+      "classroom": true,
+      "imageUrl": "pogo_stick.jpg",
+      "startDate": "2025-05-12T16:30:00.000Z",
+      "teacher": "Bounce Master",
+      "description": "Defy gravity and sanity with extreme pogo stick jumping. Safety gear provided, but bravery essential."
+    },
+    {
+      "title": "Dinosaur Riding Techniques",
+      "id": 16,
+      "courseLength": 4,
+      "classroom": false,
+      "imageUrl": "dinosaur_riding.jpg",
+      "startDate": "2025-06-23T09:00:00.000Z",
+      "teacher": "Prehistoric Wrangler",
+      "description": "Saddle up and embark on a Jurassic journey! Learn to ride dinosaurs with style and finesse."
+    },
+    {
+      "title": "Ninja Training Camp",
+      "id": 17,
+      "courseLength": 6,
+      "classroom": true,
+      "imageUrl": "ninja_training.jpg",
+      "startDate": "2025-07-15T20:15:00.000Z",
+      "teacher": "Sensei Stealth",
+      "description": "Master the art of invisibility, throwing stars, and stealthy moves in this intensive ninja training camp. Black attire not included."
+    },
+    {
+      "title": "Haunted House Design",
+      "id": 18,
+      "courseLength": 2,
+      "classroom": true,
+      "imageUrl": "haunted_house.jpg",
+      "startDate": "2025-08-28T18:45:00.000Z",
+      "teacher": "Spooky Architect",
+      "description": "Create spine-chilling haunted houses that will terrify and delight. Perfect for aspiring Halloween enthusiasts."
+    },
+    {
+      "title": "Creepy Doll Face Painting",
+      "id": 19,
+      "courseLength": 2,
+      "classroom": true,
+      "imageUrl": "scary_doll_faces.jpg",
+      "startDate": "2025-09-10T15:30:00.000Z",
+      "teacher": "Master Creepster",
+      "description": "Unlock your inner eerie artist and learn to paint terrifying faces on dolls. Not recommended for the faint of heart."
+    },
+    {
+      "title": "Swing Choreography Masterclass",
+      "id": 20,
+      "courseLength": 3,
+      "classroom": true,
+      "imageUrl": "swing_choreography.jpg",
+      "startDate": "2025-10-08T17:00:00.000Z",
+      "teacher": "Swing Maestro",
+      "description": "Dance, flip, and spin gracefully on a swing. Channel your inner circus performer in this unique swing choreography class."
+    },
+    {
+      "title": "Lego Face Sculpting",
+      "id": 21,
+      "courseLength": 4,
+      "classroom": true,
+      "imageUrl": "lego_faces.jpg",
+      "startDate": "2025-11-20T14:15:00.000Z",
+      "teacher": "Brick Artist",
+      "description": "Transform ordinary Lego bricks into expressive faces. Unleash your creativity in the world of plastic block portraiture."
+    },
+    {
+      "title": "Fruit Loop Bath Design",
+      "id": 22,
+      "courseLength": 1,
+      "classroom": false,
+      "imageUrl": "fruit_loop_bath.jpg",
+      "startDate": "2026-01-02T12:00:00.000Z",
+      "teacher": "Bath Alchemist",
+      "description": "Create a colorful and crunchy bath experience by designing your own Fruit Loop bath. Bathrobe and sense of humor required."
+    },
+    {
+      "title": "Ice Cream Cone Light Sculptures",
+      "id": 23,
+      "courseLength": 2,
+      "classroom": true,
+      "imageUrl": "ice_cream_light_bulb.jpg",
+      "startDate": "2026-02-15T19:45:00.000Z",
+      "teacher": "Light Cream Artist",
+      "description": "Combine the sweetness of ice cream with the brilliance of light bulbs. Craft your own illuminating ice cream cone sculptures."
+    },
+    {
+      "title": "Moose Mouth Yoga",
+      "id": 24,
+      "courseLength": 3,
+      "classroom": true,
+      "imageUrl": "moose_open_mouth.jpg",
+      "startDate": "2026-03-22T16:30:00.000Z",
+      "teacher": "Yoga Antlers",
+      "description": "Join this unique yoga class where participants mimic the majestic open-mouth posture of a moose. Antlers optional."
+    },
+    {
+      "title": "Blue Orange Fruit Tasting",
+      "id": 25,
+      "courseLength": 1,
+      "classroom": true,
+      "imageUrl": "blue_orange_fruit.jpg",
+      "startDate": "2026-04-10T14:00:00.000Z",
+      "teacher": "Fruit Explorer",
+      "description": "Explore the mysterious world of blue oranges and other oddly colored fruits. Taste and discuss the peculiar flavors."
+    },
+    {
+      "title": "Fruit Ninja Slicing Techniques",
+      "id": 26,
+      "courseLength": 5,
+      "classroom": true,
+      "imageUrl": "fruit_ninja_slicing.jpg",
+      "startDate": "2026-05-18T18:00:00.000Z",
+      "teacher": "Ninja Fruitmaster",
+      "description": "Become a true Fruit Ninja! Hone your slicing skills with real fruits. Note: Safety goggles provided; flying fruit may occur."
+    }
+  ],
+  "users": [{ "name": "nathalie", "age": 29 }]
+}

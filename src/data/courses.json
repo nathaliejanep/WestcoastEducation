@@ -2,7 +2,7 @@
   "courses": [
     {
       "title": "Laughter Yoga",
-      "id": 1,
+      "id": "1",
       "courseLength": 5,
       "classroom": true,
       "imageUrl": "laughter_yoga.jpg",
@@ -12,7 +12,7 @@
     },
     {
       "title": "Advanced Silliness Studies",
-      "id": 2,
+      "id": "2",
       "courseLength": 8,
       "classroom": true,
       "imageUrl": "silliness_studies.jpg",
@@ -22,7 +22,7 @@
     },
     {
       "title": "Introduction to Clown Physics",
-      "id": 3,
+      "id": "3",
       "courseLength": 12,
       "classroom": false,
       "imageUrl": "clown_physics.jpg",
@@ -32,7 +32,7 @@
     },
     {
       "title": "Extreme Tickling Techniques",
-      "id": 4,
+      "id": "4",
       "courseLength": 6,
       "classroom": true,
       "imageUrl": "tickling_techniques.jpg",
@@ -42,7 +42,7 @@
     },
     {
       "title": "Whoopee Cushion Design 101",
-      "id": 5,
+      "id": "5",
       "courseLength": 4,
       "classroom": false,
       "imageUrl": "whoopee_cushion_design.jpg",
@@ -52,7 +52,7 @@
     },
     {
       "title": "Napkin Folding for Clown Dinners",
-      "id": 6,
+      "id": "6",
       "courseLength": 7,
       "classroom": true,
       "imageUrl": "napkin_folding_clown_dinners.jpg",
@@ -62,7 +62,7 @@
     },
     {
       "title": "Juggling Chainsaws for Beginners",
-      "id": 7,
+      "id": "7",
       "courseLength": 10,
       "classroom": true,
       "imageUrl": "juggling_chainsaws.jpg",
@@ -72,7 +72,7 @@
     },
     {
       "title": "Cartoon Character Impersonation",
-      "id": 8,
+      "id": "8",
       "courseLength": 8,
       "classroom": false,
       "imageUrl": "cartoon_impersonation.jpg",
@@ -82,7 +82,7 @@
     },
     {
       "title": "Dance Like No One's Watching",
-      "id": 9,
+      "id": "9",
       "courseLength": 6,
       "classroom": true,
       "imageUrl": "dance_like_no_one_watching.jpg",
@@ -92,7 +92,7 @@
     },
     {
       "title": "Sarcasm Appreciation Workshop",
-      "id": 10,
+      "id": "10",
       "courseLength": 3,
       "classroom": false,
       "imageUrl": "sarcasm_appreciation.jpg",
@@ -102,7 +102,7 @@
     },
     {
       "title": "Dress Like a Pirate Day",
-      "id": 11,
+      "id": "11",
       "courseLength": 1,
       "classroom": false,
       "imageUrl": "pirate_dress.jpg",
@@ -112,7 +112,7 @@
     },
     {
       "title": "Fruit Loop Immersion Experience",
-      "id": 12,
+      "id": "12",
       "courseLength": 1,
       "classroom": false,
       "imageUrl": "fruit_loop_bath_effect.jpg",
@@ -122,7 +122,7 @@
     },
     {
       "title": "Alien Communication 101",
-      "id": 13,
+      "id": "13",
       "courseLength": 5,
       "classroom": false,
       "imageUrl": "alien_communication.jpg",
@@ -132,7 +132,7 @@
     },
     {
       "title": "Underwater Basket Weaving",
-      "id": 14,
+      "id": "14",
       "courseLength": 2,
       "classroom": true,
       "imageUrl": "underwater_basket_weaving.jpg",
@@ -142,7 +142,7 @@
     },
     {
       "title": "Extreme Pogo Stick Jumping",
-      "id": 15,
+      "id": "15",
       "courseLength": 3,
       "classroom": true,
       "imageUrl": "pogo_stick.jpg",
@@ -152,7 +152,7 @@
     },
     {
       "title": "Dinosaur Riding Techniques",
-      "id": 16,
+      "id": "16",
       "courseLength": 4,
       "classroom": false,
       "imageUrl": "dinosaur_riding.jpg",
@@ -162,7 +162,7 @@
     },
     {
       "title": "Ninja Training Camp",
-      "id": 17,
+      "id": "17",
       "courseLength": 6,
       "classroom": true,
       "imageUrl": "ninja_training.jpg",
@@ -172,7 +172,7 @@
     },
     {
       "title": "Haunted House Design",
-      "id": 18,
+      "id": "18",
       "courseLength": 2,
       "classroom": true,
       "imageUrl": "haunted_house.jpg",
@@ -182,7 +182,7 @@
     },
     {
       "title": "Creepy Doll Face Painting",
-      "id": 19,
+      "id": "19",
       "courseLength": 2,
       "classroom": true,
       "imageUrl": "scary_doll_faces.jpg",
@@ -192,7 +192,7 @@
     },
     {
       "title": "Swing Choreography Masterclass",
-      "id": 20,
+      "id": "20",
       "courseLength": 3,
       "classroom": true,
       "imageUrl": "swing_choreography.jpg",
@@ -202,7 +202,7 @@
     },
     {
       "title": "Lego Face Sculpting",
-      "id": 21,
+      "id": "21",
       "courseLength": 4,
       "classroom": true,
       "imageUrl": "lego_faces.jpg",
@@ -212,7 +212,7 @@
     },
     {
       "title": "Fruit Loop Bath Design",
-      "id": 22,
+      "id": "22",
       "courseLength": 1,
       "classroom": false,
       "imageUrl": "fruit_loop_bath.jpg",
@@ -222,7 +222,7 @@
     },
     {
       "title": "Ice Cream Cone Light Sculptures",
-      "id": 23,
+      "id": "23",
       "courseLength": 2,
       "classroom": true,
       "imageUrl": "ice_cream_light_bulb.jpg",
@@ -232,7 +232,7 @@
     },
     {
       "title": "Moose Mouth Yoga",
-      "id": 24,
+      "id": "24",
       "courseLength": 3,
       "classroom": true,
       "imageUrl": "moose_open_mouth.jpg",
@@ -242,7 +242,7 @@
     },
     {
       "title": "Blue Orange Fruit Tasting",
-      "id": 25,
+      "id": "25",
       "courseLength": 1,
       "classroom": true,
       "imageUrl": "blue_orange_fruit.jpg",
@@ -252,7 +252,37 @@
     },
     {
       "title": "Fruit Ninja Slicing Techniques",
-      "id": 26,
+      "id": "26",
+      "courseLength": 5,
+      "classroom": true,
+      "imageUrl": "fruit_ninja_slicing.jpg",
+      "startDate": "2026-05-18T18:00:00.000Z",
+      "teacher": "Ninja Fruitmaster",
+      "description": "Become a true Fruit Ninja! Hone your slicing skills with real fruits. Note: Safety goggles provided; flying fruit may occur."
+    },
+    {
+      "title": "Fruit Ninja Slicing Techniques",
+      "id": "28",
+      "courseLength": 5,
+      "classroom": true,
+      "imageUrl": "fruit_ninja_slicing.jpg",
+      "startDate": "2026-05-18T18:00:00.000Z",
+      "teacher": "Ninja Fruitmaster",
+      "description": "Become a true Fruit Ninja! Hone your slicing skills with real fruits. Note: Safety goggles provided; flying fruit may occur."
+    },
+    {
+      "title": "Fruit Ninja Slicing Techniques",
+      "id": "29",
+      "courseLength": 5,
+      "classroom": true,
+      "imageUrl": "fruit_ninja_slicing.jpg",
+      "startDate": "2026-05-18T18:00:00.000Z",
+      "teacher": "Ninja Fruitmaster",
+      "description": "Become a true Fruit Ninja! Hone your slicing skills with real fruits. Note: Safety goggles provided; flying fruit may occur."
+    },
+    {
+      "title": "Fruit Ninja Slicing Techniques",
+      "id": "26",
       "courseLength": 5,
       "classroom": true,
       "imageUrl": "fruit_ninja_slicing.jpg",
@@ -260,6 +290,5 @@
       "teacher": "Ninja Fruitmaster",
       "description": "Become a true Fruit Ninja! Hone your slicing skills with real fruits. Note: Safety goggles provided; flying fruit may occur."
     }
-  ],
-  "users": [{ "name": "nathalie", "age": 29 }]
+  ]
 }

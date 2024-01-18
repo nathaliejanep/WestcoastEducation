@@ -1,3 +1,5 @@
+import { Student } from './Student';
+
 export interface Course {
   // Course Title
   // Course Number
@@ -7,6 +9,7 @@ export interface Course {
   // Start date
   // Teacher
   // Booking possibility?
+  // List students enrolled
   title: string;
   id: number;
   course_length: number;
@@ -15,4 +18,5 @@ export interface Course {
   start_date: Date;
   teacher: string; // Skapa en ny interface av teacher?
   rating?: number;
+  students: Student[];
 }

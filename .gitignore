@@ -1,0 +1,20 @@
+# Dependency directories
+node_modules
+
+# Visual Studio Code settings
+vscode/
+
+# OS-specific files
+.DS_Store
+
+# TypeScript build output
+dist/
+
+# Build artifacts
+*.js
+*.js.map
+*.d.ts
+*.d.ts.map
+
+# Sensitive files
+.env

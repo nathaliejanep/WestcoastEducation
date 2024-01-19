@@ -4,7 +4,6 @@
 //  PascalCase for type names and enum names.
 //  Name files with camelCase (for example, ebsVolumes.tsx or storage.tsb)
 
-
 import { Course } from './models/Course.js';
 import CourseService from './services/course-service.js';
 import EntityService from './services/entity-service.js';

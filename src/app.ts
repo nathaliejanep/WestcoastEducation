@@ -5,20 +5,8 @@
 //  Name files with camelCase (for example, ebsVolumes.tsx or storage.tsb)
 
 import { Course } from './models/Course.js';
-import CourseService from './services/course-service.js';
 import EntityService from './services/entity-service.js';
-// import ApiService from './services/api-service.js';
 
-// async function displayCourseDetails(id: number) {
-//   const url = 'http://localhost:3000/courses/' + id;
-//   const http = new HttpClient(url);
-//   const course = await http.get();
-//   console.log(course);
-// }
-
-// displayCourseDetails(1);
-// displayCourseDetails(1);
-// displayCourseList();
 const coursesUrl = 'http://localhost:3000/courses';
 const courseService = new EntityService<Course>(coursesUrl);
 courseService.getList();

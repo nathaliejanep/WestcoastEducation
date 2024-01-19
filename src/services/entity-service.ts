@@ -3,7 +3,7 @@ import ApiService from './api-service.js';
 /**
  * Class for entities with reusable methods.
  */
-export default class EntityService<T> {
+class EntityService<T> {
   private url: string;
 
   constructor(url: string) {
@@ -44,3 +44,5 @@ export default class EntityService<T> {
     await http.edit(updatedEntity);
   };
 }
+
+export default EntityService;

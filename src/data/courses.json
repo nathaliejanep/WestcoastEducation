@@ -289,6 +289,25 @@
       "startDate": "2026-05-18T18:00:00.000Z",
       "teacher": "Ninja Fruitmaster",
       "description": "Become a true Fruit Ninja! Hone your slicing skills with real fruits. Note: Safety goggles provided; flying fruit may occur."
+    },
+    {
+      "id": "9e08",
+      "title": "",
+      "teacher": "",
+      "startDate": "",
+      "courseLength": "",
+      "description": "",
+      "imageUrl": "",
+      "classroom": "true"
+    },
+    {
+      "id": "3566",
+      "title": "hej",
+      "teacher": "hej",
+      "startDate": "",
+      "courseLength": "",
+      "description": "",
+      "imageUrl": ""
     }
   ]
 }

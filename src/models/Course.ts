@@ -10,13 +10,14 @@ export interface Course {
   // Teacher
   // Booking possibility?
   // List students enrolled
+  id: number; // TODO: Check what type id should be
   title: string;
-  id: number;
-  course_length: number;
-  classroom: boolean;
-  image_url: string;
-  start_date: Date;
   teacher: string; // Skapa en ny interface av teacher?
+  startDate: Date; // TODO: Fix date format
+  courseLength: number;
+  description: String;
+  imageUrl: string;
+  classroom: boolean;
   rating?: number;
   students: Student[];
 }

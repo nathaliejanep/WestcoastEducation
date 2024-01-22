@@ -48,6 +48,7 @@ export default class ApiService {
     // } catch (err: any) {
     //   throw new Error(`Error fetching data: ${err.message}`);
     // }
+
     return this.makeRequest<T>('GET');
   }
 

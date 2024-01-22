@@ -10,6 +10,6 @@ import EntityService from './services/entity-service.js';
 const coursesUrl = 'http://localhost:3000/courses';
 const courseService = new EntityService<Course>(coursesUrl);
 courseService.getList();
-courseService.getDetails(2);
+courseService.getEntity(2);
 // courseService.deleteCourse(27);
 const testBtn = document.getElementById('test-btn');

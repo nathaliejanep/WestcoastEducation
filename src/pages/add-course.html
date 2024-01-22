@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <script
+      src="../../dist/components/admin/add-course.js"
+      type="module"
+      defer
+    ></script>
+    <title>Admin: Add Course</title>
+  </head>
+  <body>
+    <h1>Admin: Add Course</h1>
+    <form id="add-course-form">
+      <div class="form-control">
+        <label for="title">Course Title:</label>
+        <input
+          type="text"
+          name="title"
+          id="title"
+          placeholder="Course"
+        />
+      </div>
+
+      <div class="form-control">
+        <label for="teacher">Teacher:</label>
+        <input
+          type="text"
+          name="teacher"
+          id="teacher"
+          placeholder="Teacher"
+        />
+      </div>
+
+      <div class="form-control">
+        <label for="start-date">Start Date:</label>
+        <input
+          type="date"
+          name="startDate"
+          id="start-date"
+          placeholder="Start date"
+        />
+      </div>
+
+      <div class="form-control">
+        <label for="courseLength">Length: (days)</label>
+        <input
+          type="number"
+          name="courseLength"
+          id="courseLength"
+          placeholder="1"
+        />
+      </div>
+
+      <div class="form-control">
+        <label for="description">Description:</label>
+        <input
+          type="text"
+          name="description"
+          id="description"
+          placeholder="Description"
+        />
+      </div>
+
+      <div class="form-control">
+        <label for="image-url">Course Image URL:</label>
+        <input
+          type="text"
+          name="imageUrl"
+          id="image-url"
+          placeholder="Image URL"
+        />
+      </div>
+
+      <div class="form-control">
+        <input
+          type="radio"
+          name="classroom"
+          id="classroom"
+          value="true"
+        />
+        <label for="classroom">Classroom</label>
+
+        <input
+          type="radio"
+          name="classroom"
+          id="remote"
+          value="false"
+        />
+        <label for="remote">Remote</label>
+      </div>
+
+      <div class="form-control">
+        <button
+          type="submit"
+          class="btn"
+        >
+          Save
+        </button>
+      </div>
+    </form>
+  </body>
+</html>

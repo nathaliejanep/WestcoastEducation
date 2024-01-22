@@ -1,4 +1,4 @@
-export const convertForm = (formData: FormData) => {
+export const convertForm = <T>(formData: FormData): T => {
   const data = Object.fromEntries(formData.entries());
-  return data;
+  return data as T;
 };

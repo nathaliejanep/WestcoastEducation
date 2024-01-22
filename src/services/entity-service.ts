@@ -13,7 +13,6 @@ class EntityService<T> {
   getList = async (): Promise<T[]> => {
     const http = new ApiService(`${this.url}/`);
     const entities: T[] = await http.get<T[]>();
-    console.log(entities);
     return entities;
   };
 
@@ -22,7 +21,7 @@ class EntityService<T> {
    * @param id
    * @returns details of entity
    */
-  getDetails = async (id: number): Promise<T> => {
+  getEntity = async (id: number): Promise<T> => {
     const http = new ApiService(`${this.url}/${id}`);
     const entity: T = await http.get<T>();
     console.log(entity);
@@ -34,7 +33,8 @@ class EntityService<T> {
     await http.add<T>(entity);
   };
 
-  deleteEntity = async (id: number) => {
+  // TODO: Check if this has to be string
+  deleteEntity = async (id: string) => {
     const http = new ApiService(`${this.url}/${id}`);
     await http.delete();
   };

@@ -15,6 +15,7 @@ dist/
 *.js.map
 *.d.ts
 *.d.ts.map
+*.css.map 
 
 # Sensitive files
 .env

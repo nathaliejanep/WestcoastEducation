@@ -1,4 +1,4 @@
-import { Student } from './User';
+// import { Student } from './User';
 
 export interface Course {
   // Course Title
@@ -10,7 +10,7 @@ export interface Course {
   // Teacher
   // Booking possibility?
   // List students enrolled
-  id: number; // TODO: Check what type id should be
+  readonly id: number; // TODO: Check what type id should be
   title: string;
   teacher: string; // Skapa en ny interface av teacher?
   startDate: Date; // TODO: Fix date format
@@ -19,5 +19,5 @@ export interface Course {
   imageUrl: string;
   classroom: boolean;
   rating?: number;
-  students: Student[];
+  // students: Student[];
 }

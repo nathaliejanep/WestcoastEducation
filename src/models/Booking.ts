@@ -1,6 +1,6 @@
 // TODO: Fix properties for user- and courseId
 export interface Booking {
-  id: number;
+  readonly id: number;
   userId: number; // ID of the user making the booking
   courseId: number; // ID of the course being booked
   date: Date; // Date and time of the booking

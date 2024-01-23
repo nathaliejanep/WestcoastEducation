@@ -6,10 +6,22 @@
 
 import { Course } from './models/Course.js';
 import EntityService from './services/entity-service.js';
+import config from './utils/config.js';
 
-const coursesUrl = 'http://localhost:3000/courses';
-const courseService = new EntityService<Course>(coursesUrl);
-courseService.getList();
-courseService.getEntity(2);
-// courseService.deleteCourse(27);
-const testBtn = document.getElementById('test-btn');
+const initPage = async () => {
+  const courseService = new EntityService<Course>(
+    `${config.BASE_URL}${config.COURSES_PATH}`
+  );
+
+  console.log(await courseService.getList());
+  // courseService.getEntity(2);
+  // courseService.deleteCourse(27);
+
+  const logout = document.getElementById('logout');
+  if (logout) {
+    logout.addEventListener('click', (e) => {
+      console.log('click');
+    });
+  }
+};
+document.addEventListener('DOMContentLoaded', initPage);

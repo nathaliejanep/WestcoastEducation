@@ -7,7 +7,7 @@
       content="width=device-width, initial-scale=1.0"
     />
     <script
-      src="../../dist/components/auth/login.js"
+      src="../../dist/components/auth/sign-up.js"
       type="module"
       defer
     ></script>
@@ -17,12 +17,27 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
-    <title>Log In</title>
+    <title>Sign Up</title>
   </head>
   <body>
-    <h1>Log in</h1>
-    <form id="login-form">
+    <h1>Sign Up</h1>
+    <form id="sign-up-form">
       <!-- TODO: Fix autocomplete-->
+      <div class="input-group">
+        <label
+          for="name"
+          class="label"
+          >Name:</label
+        >
+        <input
+          type="text"
+          id="name"
+          name="name"
+          class="name"
+          autocomplete="name"
+          required
+        />
+      </div>
       <div class="input-group">
         <label
           for="email"
@@ -37,7 +52,6 @@
           autocomplete="email"
           required
         />
-        <span class="err-msg"></span>
       </div>
       <div class="input-group">
         <label
@@ -54,16 +68,14 @@
           minlength="3"
           required
         />
-        <span class="err-msg"></span>
       </div>
       <br />
       <button
         type="submit"
         class="button"
       >
-        Login
+        Sign Up
       </button>
     </form>
-    <a href="./sign-up.html">Sign Up</a>
   </body>
 </html>

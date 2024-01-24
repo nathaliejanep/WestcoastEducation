@@ -14,9 +14,12 @@ const initPage = async () => {
     const user = new FormData(loginForm);
     let userObj: User = convertForm(user);
 
-    const { username, password } = userObj;
+    const { email, password } = userObj;
 
-    const isAuth = await authService.authenticate(username, password);
+    console.log(email);
+
+    const isAuth = await authService.authenticate(email, password);
+
     // TODO fix login func
     // if admin go to admin
 

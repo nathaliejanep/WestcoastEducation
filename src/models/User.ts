@@ -2,12 +2,11 @@ import { Course } from './Course';
 
 export interface User {
   name: string;
-  address: string;
-  mail: string;
-  phone: number;
-  readonly id: number;
+  address?: string;
+  email: string;
+  phone?: number;
+  readonly id?: number;
   isAuthenticated?: boolean;
-  username: string;
   password: string;
   role: 'student' | 'teacher' | 'admin';
   enrolledCourses?: Course[];
@@ -27,6 +26,6 @@ export interface User {
 // }
 
 export interface AuthenticatedUser extends User {
-  username: string;
+  email: string;
   password: string;
 }

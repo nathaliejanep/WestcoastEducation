@@ -1,103 +1,41 @@
 import { Course } from '../models/Course.js';
-import ApiService from './api-service.js';
+import EntityService from './entity-service.js';
 
-/** // TODO: delete this file since we have entity
+// FIXME: make sure all exports are done the same
+// TODO: move user methods to here
+/** //
  * Gets details
  * @param id
  * @returns details of entity
  */
-export default class CourseService {
-  private url: string;
-
+export default class CourseService extends EntityService<Course> {
   constructor(url: string) {
-    this.url = url;
+    super(url);
   }
-  getCourseList = async (): Promise<Course[]> => {
-    const http = new ApiService(`${this.url}/courses/`);
-    const courses: Course[] = await http.get<Course[]>();
-    console.log(courses);
-    return courses;
-  };
 
-  getCourseDetails = async (id: number): Promise<Course> => {
-    const http = new ApiService(`${this.url}/courses/${id}`);
-    const course: Course = await http.get<Course>();
-    console.log(course);
-    return course;
-  };
+  // Add student to course
+  async enrollStudent(courseId: number, studentId: number): Promise<void> {
+    // Get course
+    const currentCourse: Course = await this.getEntity(courseId);
+    // Destruct course.students and add student
+    const updateStudents = [...(currentCourse.students || []), studentId];
+    console.log(updateStudents);
+    // Destruct course and add updated students
+    const updatedCourse: Course = {
+      ...currentCourse,
+      students: updateStudents,
+    };
+    console.log(currentCourse.students);
 
-  addCourse = async (course: Course) => {
-    const http = new ApiService(`${this.url}/courses/`);
-    await http.add<Course>(course);
-  };
+    const studentExists = currentCourse.students?.some((existingUser) => {
+      return existingUser === studentId;
+    });
 
-  deleteCourse = async (id: number) => {
-    const http = new ApiService(`${this.url}/courses/${id}`);
-    await http.delete();
-  };
-
-  updateCourse = async (id: number, updatedCourse: Course) => {
-    const http = new ApiService(`${this.url}/courses/${id}`);
-    await http.edit(updatedCourse);
-  };
+    if (studentExists) {
+      console.log('Student exist already');
+    } else {
+      console.log('push student');
+      await this.updateEntity(courseId, updatedCourse);
+    }
+  }
 }
-
-// courseService.getCourseList();
-
-// export const displayCourseList = async (): Promise<Course[]> => {
-//   const http = new ApiService(`${url}/courses/`);
-//   const courses: Course[] = await http.get<Course[]>();
-//   console.log(courses);
-//   return courses;
-// };
-
-// export const displayCourseDetails = async (id: number): Promise<Course> => {
-//   const http = new ApiService(`${url}/courses/${id}`);
-//   const course: Course = await http.get<Course>();
-//   console.log(typeof course);
-
-//   return course;
-// };
-
-// export const addCourse = async (course: Course) => {
-//   const http = new ApiService(`${url}/courses/`);
-
-//   await http.add<Course>(course);
-// };
-
-// // OBS! ändra till id som parameter
-// export const deleteCourse = async () => {
-//   const http = new ApiService(`${url}/courses/28`);
-//   await http.delete();
-// };
-
-// // OBS! ändra till id som parameter
-// export const editCourse = async (id: number) => {
-//   const http = new ApiService(`${url}/courses/${id}`);
-//   await http.edit({
-//     title: 'string',
-//     id: 100,
-//     course_length: 10,
-//     classroom: true,
-//     image_url: 'string',
-//     start_date: new Date(),
-//     teacher: 'string',
-//   });
-// };
-
-// // editCourse(31);
-// const testBtn = document.getElementById('test-btn');
-
-// testBtn?.addEventListener('click', deleteCourse);
-
-// // kalla när form fylld
-// // addCourse({
-// //   title: 'string',
-// //   id: 100,
-// //   course_length: 10,
-// //   classroom: true,
-// //   image_url: 'string',
-// //   start_date: new Date(),
-// //   teacher: 'string',
-// //   rating: 1,
-// // });

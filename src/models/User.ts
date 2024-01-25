@@ -5,11 +5,11 @@ export interface User {
   address?: string;
   email: string;
   phone?: number;
-  readonly id?: number;
+  readonly id: number;
   isAuthenticated?: boolean;
   password: string;
   role: 'student' | 'teacher' | 'admin';
-  enrolledCourses?: Course[];
+  courses?: number[];
   isAdmin: boolean;
 }
 

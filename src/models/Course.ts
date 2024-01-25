@@ -1,5 +1,7 @@
 // import { Student } from './User';
 
+import { User } from './User';
+
 export interface Course {
   // Course Title
   // Course Number
@@ -19,5 +21,5 @@ export interface Course {
   imageUrl: string;
   classroom: boolean;
   rating?: number;
-  // students: Student[];
+  students?: number[];
 }

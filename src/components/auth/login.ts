@@ -32,9 +32,12 @@ const initPage = async () => {
 
         if (authService.isAdmin(authenticatedUser)) {
           console.log('admin');
-          window.location.replace('/src/pages/admin.html');
+          // window.location.replace('/src/pages/admin.html');
+          location.href = `./admin.html`;
         } else {
-          window.location.replace('/src/pages/dashboard.html');
+          // window.location.replace('/src/pages/dashboard.html');
+          location.href = `./dashboard.html`;
+
           console.log('not admin');
         }
       }

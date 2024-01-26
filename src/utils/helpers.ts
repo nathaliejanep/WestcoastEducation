@@ -8,4 +8,8 @@ const navigateTo = (path: string) => {
   window.location.href = path;
 };
 
-export { convertForm, navigateTo };
+const getUserRole = () => {
+  return localStorage.getItem('userRole');
+};
+
+export { convertForm, navigateTo, getUserRole };

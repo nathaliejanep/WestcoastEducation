@@ -3,7 +3,7 @@ import EntityService from '../../services/entity-service.js';
 import UserService from '../../services/user-service.js';
 import config from '../../utils/config.js';
 import { renderResultMessage } from '../../utils/dom-helpers.js';
-import { navigateTo } from '../../utils/helpers.js';
+import { getUserRole, navigateTo } from '../../utils/helpers.js';
 
 const initPage = async () => {
   const courseService = new CourseService(
@@ -13,10 +13,7 @@ const initPage = async () => {
 
   let courseId = +location.search.split('=')[1];
   const getCourse = await courseService.getEntity(courseId);
-  // const loggedInStudent = false;
-  // const loggedInAdmin = true;
-  const loggedInStudent = true;
-  const loggedInAdmin = false;
+
   const root = document.getElementById('root');
 
   if (root) {
@@ -104,10 +101,10 @@ const initPage = async () => {
       courseTeacher
     );
 
-    if (loggedInStudent) {
+    if (getUserRole() === 'student') {
       courseContainer.appendChild(bookBtn);
     }
-    if (loggedInAdmin) {
+    if (getUserRole() === 'admin') {
       courseContainer.append(editBtn, deleteBtn);
     }
     courseContainer.appendChild(messageContainer);

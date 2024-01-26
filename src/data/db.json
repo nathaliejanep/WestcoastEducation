@@ -204,7 +204,10 @@
       "imageUrl": "swing_choreography.jpg",
       "startDate": "2025-10-08T17:00:00.000Z",
       "teacher": "Swing Maestro",
-      "description": "Dance, flip, and spin gracefully on a swing. Channel your inner circus performer in this unique swing choreography class."
+      "description": "Dance, flip, and spin gracefully on a swing. Channel your inner circus performer in this unique swing choreography class.",
+      "students": [
+        2
+      ]
     },
     {
       "title": "Lego Face Sculpting",
@@ -305,7 +308,8 @@
         24,
         22,
         20,
-        17
+        17,
+        18
       ]
     },
     {

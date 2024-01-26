@@ -1,22 +1,17 @@
 import { Course } from '../../models/Course.js';
 import CourseService from '../../services/course-service.js';
 import config from '../../utils/config.js';
-import { navigateTo } from '../../utils/helpers.js';
+import { getUserRole, navigateTo } from '../../utils/helpers.js';
 
-// src/assets/images/laughter_yoga.jpeg
 const initPage = async () => {
   const courseService = new CourseService(
     `${config.BASE_URL}${config.COURSES_PATH}`
   );
   const courseList: Course[] = await courseService.getList();
-  // Get from LS
-  //   const loggedInStudent = true;
-  const loggedInStudent = true;
-  const loggedInAdmin = false;
+  const root = document.getElementById('root') as HTMLDivElement;
 
-  const root = document.getElementById('root');
   if (root) {
-    const courseH = document.createElement('h2');
+    const courseH: HTMLHeadingElement = document.createElement('h1');
     courseH.innerText = 'Courses';
 
     root.appendChild(courseH);
@@ -42,8 +37,14 @@ const initPage = async () => {
 
       // Link container for list item title
       const listItemLink: HTMLAnchorElement = document.createElement('a');
-      listItemLink.href = `./course-details.html?id=${course.id}`;
 
+      if (window.location.pathname.includes('/index.html')) {
+        listItemLink.href = `src/pages/course-details.html?id=${course.id}`;
+      }
+
+      if (window.location.pathname.includes('/dashboard.html')) {
+        listItemLink.href = `./course-details.html?id=${course.id}`;
+      }
       //   listItemLink.classList.add('list-group-item', 'list-group-item-action');
       listItemLink.setAttribute('course-id', stringifiedId);
       listItemLink.setAttribute('aria-current', 'true');
@@ -59,11 +60,11 @@ const initPage = async () => {
       listItemLink.appendChild(listItemTitle);
       listItemWrapper.append(listItemLink, listItemDate);
 
-      // Book for student
-      const bookBtn = document.createElement('button');
-      bookBtn.textContent = 'Book';
-      bookBtn.setAttribute('data-id', stringifiedId);
-      bookBtn.classList.add('book-btn', 'btn', 'btn-primary', 'ml-2');
+      // // Book for student
+      // const bookBtn = document.createElement('button');
+      // bookBtn.textContent = 'Book';
+      // bookBtn.setAttribute('data-id', stringifiedId);
+      // bookBtn.classList.add('book-btn', 'btn', 'btn-primary', 'ml-2');
 
       // Edit for admin
       const editBtn = document.createElement('button');
@@ -82,10 +83,10 @@ const initPage = async () => {
         location.reload(); //TODO: change this
       };
 
-      if (loggedInStudent) {
-        listItemWrapper.appendChild(bookBtn);
-      }
-      if (loggedInAdmin) {
+      // if (getUserRole() === 'student') {
+      //   listItemWrapper.appendChild(bookBtn);
+      // }
+      if (getUserRole() === 'admin') {
         listItemWrapper.append(editBtn, deleteBtn);
       }
 

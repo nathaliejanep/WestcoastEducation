@@ -14,7 +14,7 @@ export default class CourseService extends EntityService<Course> {
   }
 
   // Add student to course
-  async enrollStudent(courseId: number, studentId: number): Promise<void> {
+  async enrollStudent(courseId: number, studentId: number): Promise<string> {
     // Get course
     const currentCourse: Course = await this.getEntity(courseId);
     // Destruct course.students and add student
@@ -33,9 +33,11 @@ export default class CourseService extends EntityService<Course> {
 
     if (studentExists) {
       console.log('Student exist already');
+      return 'You are already enrolled in this class';
     } else {
       console.log('push student');
       await this.updateEntity(courseId, updatedCourse);
+      return 'Successfully enrolled, thanks for registering to this course';
     }
   }
 

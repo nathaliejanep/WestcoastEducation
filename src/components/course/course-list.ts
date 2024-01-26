@@ -1,6 +1,7 @@
 import { Course } from '../../models/Course.js';
 import CourseService from '../../services/course-service.js';
 import config from '../../utils/config.js';
+import { navigateTo } from '../../utils/helpers.js';
 
 // src/assets/images/laughter_yoga.jpeg
 const initPage = async () => {
@@ -10,7 +11,7 @@ const initPage = async () => {
   const courseList: Course[] = await courseService.getList();
   // Get from LS
   //   const loggedInStudent = true;
-  const loggedInStudent = false;
+  const loggedInStudent = true;
   const loggedInAdmin = false;
 
   const root = document.getElementById('root');
@@ -41,7 +42,7 @@ const initPage = async () => {
 
       // Link container for list item title
       const listItemLink: HTMLAnchorElement = document.createElement('a');
-      listItemLink.href = `src/pages/course-details.html?id=${course.id}`;
+      listItemLink.href = `./course-details.html?id=${course.id}`;
 
       //   listItemLink.classList.add('list-group-item', 'list-group-item-action');
       listItemLink.setAttribute('course-id', stringifiedId);
@@ -69,12 +70,17 @@ const initPage = async () => {
       editBtn.textContent = 'Edit';
       editBtn.setAttribute('data-id', stringifiedId);
       editBtn.classList.add('edit-btn', 'btn', 'btn-primary', 'ml-auto');
+      editBtn.onclick = () => navigateTo(`./edit-course.html?id=${course.id}`);
 
       // Delete for admin
       const deleteBtn = document.createElement('button');
       deleteBtn.textContent = 'Delete';
       deleteBtn.setAttribute('data-id', stringifiedId);
       deleteBtn.classList.add('delete-btn', 'btn', 'btn-primary', 'ml-2');
+      deleteBtn.onclick = async () => {
+        await courseService.deleteEntity(course.id);
+        location.reload(); //TODO: change this
+      };
 
       if (loggedInStudent) {
         listItemWrapper.appendChild(bookBtn);

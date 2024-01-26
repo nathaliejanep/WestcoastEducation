@@ -34,7 +34,7 @@ class EntityService<T> {
   };
 
   // TODO: Check if this has to be string
-  deleteEntity = async (id: string) => {
+  deleteEntity = async (id: number) => {
     const http = new ApiService(`${this.url}/${id}`);
     await http.delete();
   };

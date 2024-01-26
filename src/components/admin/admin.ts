@@ -72,7 +72,7 @@ const initPage = async () => {
     btn.addEventListener('click', () => {
       const courseId = btn.getAttribute('data-id');
       if (courseId) {
-        courseService.deleteEntity(courseId);
+        courseService.deleteEntity(+courseId);
       }
     });
   });

@@ -1,8 +1,7 @@
 import { AuthenticatedUser, User } from '../../models/User.js';
 import AuthService from '../../services/auth-service.js';
 import config from '../../utils/config.js';
-import { convertForm } from '../../utils/helpers.js';
-console.log('fddd');
+import { convertForm, navigateTo } from '../../utils/helpers.js';
 
 const initPage = async () => {
   const authService = new AuthService(`${config.BASE_URL}${config.USERS_PATH}`);
@@ -33,7 +32,8 @@ const initPage = async () => {
         if (authService.isAdmin(authenticatedUser)) {
           console.log('admin');
           // window.location.replace('/src/pages/admin.html');
-          location.href = `./admin.html`;
+          // location.href = `./admin.html`;
+          navigateTo('./admin.html');
         } else {
           // window.location.replace('/src/pages/dashboard.html');
           location.href = `./dashboard.html`;

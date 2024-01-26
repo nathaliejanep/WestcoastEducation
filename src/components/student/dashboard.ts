@@ -7,7 +7,7 @@ import UserService from '../../services/user-service.js';
 import config from '../../utils/config.js';
 
 const userService = new UserService(`${config.BASE_URL}${config.USERS_PATH}`);
-
+// TODO: move needed code and then delete
 const getUserDetails = async (userId: number): Promise<User> => {
   const user = await userService.getEntity(userId);
   return user;

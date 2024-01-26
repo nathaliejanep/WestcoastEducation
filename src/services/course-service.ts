@@ -38,4 +38,17 @@ export default class CourseService extends EntityService<Course> {
       await this.updateEntity(courseId, updatedCourse);
     }
   }
+
+  // 4 most popular courses
+  async findPopularCourses() {
+    const courses = await this.getList();
+
+    const sortedCourses = courses.sort(
+      (a, b) => (b.students?.length ?? 0) - (a.students?.length ?? 0)
+    );
+
+    const topCourses = sortedCourses.slice(0, 4);
+    console.log(topCourses);
+    return topCourses;
+  }
 }

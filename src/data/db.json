@@ -5,10 +5,19 @@
       "id": 1,
       "courseLength": 5,
       "classroom": true,
-      "imageUrl": "laughter_yoga.jpg",
+      "imageUrl": "laughter_yoga.jpeg",
       "startDate": "2024-02-15T10:00:00.000Z",
       "teacher": "Chuckles McLaughster",
-      "description": "Join us for a hilariously fun yoga experience that combines laughter and traditional yoga poses. Guaranteed to boost your mood!"
+      "description": "Join us for a hilariously fun yoga experience that combines laughter and traditional yoga poses. Guaranteed to boost your mood!",
+      "students": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
     },
     {
       "title": "Introduction to Clown Physics",
@@ -178,7 +187,14 @@
       "imageUrl": "scary_doll_faces.jpg",
       "startDate": "2025-09-10T15:30:00.000Z",
       "teacher": "Master Creepster",
-      "description": "Unlock your inner eerie artist and learn to paint terrifying faces on dolls. Not recommended for the faint of heart."
+      "description": "Unlock your inner eerie artist and learn to paint terrifying faces on dolls. Not recommended for the faint of heart.",
+      "students": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
     },
     {
       "title": "Swing Choreography Masterclass",
@@ -208,17 +224,14 @@
       "imageUrl": "fruit_loop_bath.jpg",
       "startDate": "2026-01-02T12:00:00.000Z",
       "teacher": "Bath Alchemist",
-      "description": "Create a colorful and crunchy bath experience by designing your own Fruit Loop bath. Bathrobe and sense of humor required."
-    },
-    {
-      "title": "Ice Cream Cone Light Sculptures",
-      "id": "23",
-      "courseLength": 2,
-      "classroom": true,
-      "imageUrl": "ice_cream_light_bulb.jpg",
-      "startDate": "2026-02-15T19:45:00.000Z",
-      "teacher": "Light Cream Artist",
-      "description": "Combine the sweetness of ice cream with the brilliance of light bulbs. Craft your own illuminating ice cream cone sculptures."
+      "description": "Create a colorful and crunchy bath experience by designing your own Fruit Loop bath. Bathrobe and sense of humor required.",
+      "students": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
     },
     {
       "title": "Moose Mouth Yoga",
@@ -238,16 +251,32 @@
       "imageUrl": "blue_orange_fruit.jpg",
       "startDate": "2026-04-10T14:00:00.000Z",
       "teacher": "Fruit Explorer",
-      "description": "Explore the mysterious world of blue oranges and other oddly colored fruits. Taste and discuss the peculiar flavors."
+      "description": "Explore the mysterious world of blue oranges and other oddly colored fruits. Taste and discuss the peculiar flavors.",
+      "students": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
     },
     {
-      "id": 23,
-      "title": "d",
-      "teacher": "d",
-      "startDate": "",
-      "courseLength": "",
-      "description": "",
-      "imageUrl": ""
+      "title": "Fruit Ninja Slicing Techniques",
+      "id": 24,
+      "courseLength": 5,
+      "classroom": true,
+      "imageUrl": "fruit_ninja_slicing.jpg",
+      "startDate": "2026-05-18T18:00:00.000Z",
+      "teacher": "Ninja Fruitmaster",
+      "description": "Become a true Fruit Ninja! Hone your slicing skills with real fruits. Note: Safety goggles provided; flying fruit may occur.",
+      "students": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
     }
   ],
   "users": [
@@ -265,12 +294,19 @@
     {
       "name": "Richard",
       "address": "Gata",
-      "email": "mail",
+      "email": "r@mail.com",
       "phone": 1234,
       "username": "r@mail.com",
       "password": "123",
       "id": 2,
-      "role": "student"
+      "role": "student",
+      "courses": [
+        1,
+        24,
+        22,
+        20,
+        17
+      ]
     },
     {
       "id": 3,

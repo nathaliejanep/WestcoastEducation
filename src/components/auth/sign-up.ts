@@ -1,10 +1,12 @@
 import { User } from '../../models/User.js';
 import AuthService from '../../services/auth-service.js';
 import config from '../../utils/config.js';
+import { renderResultMessage } from '../../utils/dom-helpers.js';
 import { convertForm } from '../../utils/helpers.js';
 
 const initPage = () => {
   const authService = new AuthService(`${config.BASE_URL}${config.USERS_PATH}`);
+  const signupMsg = document.getElementById('signup-msg');
 
   const form = document.getElementById('sign-up-form') as HTMLFormElement;
 
@@ -20,10 +22,8 @@ const initPage = () => {
     const emailExists = await authService.emailExists(userObj.email);
 
     if (emailExists) {
-      //TODO: Message in UI
-      console.log('Email exists already try different');
+      if (signupMsg) renderResultMessage(signupMsg, 'Email exists already');
     } else {
-      // await authService.addEntity(userObj);
       await authService.signup(form);
     }
   };

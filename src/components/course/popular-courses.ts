@@ -1,11 +1,9 @@
 import { Course } from '../../models/Course.js';
 import CourseService from '../../services/course-service.js';
-import config from '../../utils/config.js';
+import c from '../../utils/config.js';
 
 const initPage = async () => {
-  const courseService = new CourseService(
-    `${config.BASE_URL}${config.COURSES_PATH}`
-  );
+  const courseService = new CourseService(`${c.BASE_URL}${c.COURSES_PATH}`);
   const popularCourses = await courseService.findPopularCourses();
 
   const root = document.getElementById('root') as HTMLDivElement;

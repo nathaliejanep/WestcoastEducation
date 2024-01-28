@@ -126,27 +126,27 @@ const initPage = () => {
   dropdownUserLi.classList.add('nav-item', 'dropdown');
 
   // Drop Down Name
-  const dropdownUserLink = document.createElement('a');
-  dropdownUserLink.classList.add('nav-link', 'dropdown-toggle');
-  dropdownUserLink.href = 'src/pages/my-courses.html';
-  dropdownUserLink.id = 'navbarDropdownMenuLink';
-  dropdownUserLink.setAttribute('data-toggle', 'dropdown');
-  dropdownUserLink.setAttribute('aria-haspopup', 'true');
-  dropdownUserLink.setAttribute('aria-expanded', 'false');
-  dropdownUserLink.textContent = 'Name';
+  // const dropdownUserLink = document.createElement('a');
+  // dropdownUserLink.classList.add('nav-link', 'dropdown-toggle');
+  // dropdownUserLink.href = 'src/pages/my-courses.html';
+  // dropdownUserLink.id = 'navbarDropdownMenuLink';
+  // dropdownUserLink.setAttribute('data-toggle', 'dropdown');
+  // dropdownUserLink.setAttribute('aria-haspopup', 'true');
+  // dropdownUserLink.setAttribute('aria-expanded', 'false');
+  // dropdownUserLink.textContent = 'Name';
 
-  const dropdownMenuDiv = document.createElement('div');
-  dropdownMenuDiv.classList.add('dropdown-menu');
-  dropdownMenuDiv.setAttribute('aria-labelledby', 'navbarDropdownMenuLink');
+  // const dropdownMenuDiv = document.createElement('div');
+  // dropdownMenuDiv.classList.add('dropdown-menu');
+  // dropdownMenuDiv.setAttribute('aria-labelledby', 'navbarDropdownMenuLink');
 
-  // My Courses
-  const dropdownItemMyCourses = document.createElement('a');
-  dropdownItemMyCourses.classList.add('dropdown-item');
-  dropdownItemMyCourses.href = 'src/pages/my-courses.html';
-  dropdownItemMyCourses.textContent = 'My Courses';
+  // // My Courses
+  // const dropdownItemMyCourses = document.createElement('a');
+  // dropdownItemMyCourses.classList.add('dropdown-item');
+  // dropdownItemMyCourses.href = 'src/pages/my-courses.html';
+  // dropdownItemMyCourses.textContent = 'My Courses';
 
-  dropdownUserLi.appendChild(dropdownUserLink);
-  dropdownUserLi.appendChild(dropdownMenuDiv);
+  // dropdownUserLi.appendChild(dropdownUserLink);
+  // dropdownUserLi.appendChild(dropdownMenuDiv);
 
   if (getAuthId() && getUserRole() === 'admin') {
     ul.append(studentsLi, addCourseLi);
@@ -154,7 +154,7 @@ const initPage = () => {
 
   if (getAuthId() && getUserRole() === 'student') {
     ul.appendChild(dropdownUserLi);
-    dropdownMenuDiv.appendChild(dropdownItemMyCourses);
+    // dropdownMenuDiv.appendChild(dropdownItemMyCourses);
   }
 
   if (getAuthId()) {

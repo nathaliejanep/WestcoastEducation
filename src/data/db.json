@@ -1,72 +1,44 @@
 {
   "courses": [
     {
-      "title": "Introduction to Clown Physics",
-      "teacher": "Prof. Honkington",
-      "startDate": "2024-01-13",
-      "courseLength": "12",
-      "description": "Explore the fundamental principles of physics through the hilarious lens of clowning. No serious faces allowed!",
-      "imageUrl": "clown_physics.jpg",
-      "classroom": "false",
-      "id": 2
-    },
-    {
       "title": "Extreme Tickling Techniques",
       "id": 3,
       "courseLength": 6,
       "classroom": true,
-      "imageUrl": "tickling_techniques.jpg",
+      "imageUrl": "laughter_yoga.jpeg",
       "startDate": "2024-05-20",
       "teacher": "Tickle Master Flex",
-      "description": "Tickle your funny bone with this course on extreme tickling techniques. Warning: Side effects may include uncontrollable laughter!"
+      "description": "Tickle your funny bone with this course on extreme tickling techniques. Warning: Side effects may include uncontrollable laughter!",
+      "students": [
+        2
+      ]
     },
     {
-      "title": "Whoopee Cushion Design 101",
-      "id": 4,
-      "courseLength": 4,
-      "classroom": false,
-      "imageUrl": "whoopee_cushion_design.jpg",
-      "startDate": "2024-06-12",
-      "teacher": "Pranksterella",
-      "description": "Master the art of whoopee cushion design and surprise your friends with perfectly timed pranks. Get ready for laughs and gasps!"
-    },
-    {
-      "title": "Napkin Folding for Clown Dinners",
-      "id": 5,
-      "courseLength": 7,
+      "title": "Laughter Yoga",
+      "id": 100,
+      "courseLength": 5,
       "classroom": true,
-      "imageUrl": "napkin_folding_clown_dinners.jpg",
-      "startDate": "2024-07-08",
-      "teacher": "Foldy McJester",
-      "description": "Learn the fine art of napkin folding with a clownish twist. Impress your guests at clown-themed dinners with creatively folded napkins."
-    },
-    {
-      "title": "Juggling Chainsaws for Beginners",
-      "id": 6,
-      "courseLength": 10,
-      "classroom": true,
-      "imageUrl": "juggling_chainsaws.jpg",
-      "startDate": "2024-08-22",
-      "teacher": "Blade Juggler Extraordinaire",
-      "description": "Embark on a thrilling journey into the world of juggling chainsaws. Safety first, laughs second. Disclaimer: Don't try this at home!"
-    },
-    {
-      "title": "Cartoon Character Impersonation",
-      "id": 7,
-      "courseLength": 8,
-      "classroom": false,
-      "imageUrl": "cartoon_impersonation.jpg",
-      "startDate": "2024-09-17",
-      "teacher": "Toony McVoiceover",
-      "description": "Bring your favorite cartoon characters to life with this course on cartoon character impersonation. Get ready to sound silly and have a blast!"
+      "imageUrl": "laughter_yoga.jpeg",
+      "startDate": "2024-02-15",
+      "teacher": "Chuckles McLaughster",
+      "description": "Join us for a hilariously fun yoga experience that combines laughter and traditional yoga poses. Guaranteed to boost your mood!",
+      "students": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
     },
     {
       "title": "Dance Like No One's Watching",
       "id": 8,
       "courseLength": 6,
       "classroom": true,
-      "imageUrl": "dance_like_no_one_watching.jpg",
-      "startDate": "2024-10-05T",
+      "imageUrl": "swing_choreography.jpg",
+      "startDate": "2024-10-05",
       "teacher": "Groovy McGrooverson",
       "description": "Shake off your inhibitions and dance like no one's watching! This course is all about having fun on the dance floor, no judgment allowed."
     },
@@ -75,78 +47,38 @@
       "id": 9,
       "courseLength": 3,
       "classroom": false,
-      "imageUrl": "sarcasm_appreciation.jpg",
+      "imageUrl": "fruit_loop_bath.jpg",
       "startDate": "2024-11-11",
       "teacher": "Sir Snarkalot",
       "description": "Sharpen your wit and master the art of sarcasm with Sir Snarkalot. Warning: Participants may develop a keen sense of humor."
     },
     {
-      "title": "Dress Like a Pirate Day",
-      "id": 10,
-      "courseLength": 1,
-      "classroom": false,
-      "imageUrl": "pirate_dress.jpg",
-      "startDate": "2024-12-09T14:30:00.000Z",
-      "teacher": "Captain Swashbuckle",
-      "description": "Arrr! Join Captain Swashbuckle and learn to dress like a pirate for a day. Eyepatches and parrots encouraged!"
-    },
-    {
       "title": "Fruit Loop Immersion Experience",
-      "id": 11,
-      "courseLength": 1,
-      "classroom": false,
-      "imageUrl": "fruit_loop_bath_effect.jpg",
-      "startDate": "2026-06-05T12:30:00.000Z",
       "teacher": "Captain Crunch",
-      "description": "Dive into a world of crunchiness! Immerse yourself in a bath filled with Fruit Loops and unlock the secrets of sensory delight. Warning: May cause extreme happiness and cravings for breakfast cereal."
-    },
-    {
-      "title": "Alien Communication 101",
-      "id": 12,
-      "courseLength": 5,
-      "classroom": false,
-      "imageUrl": "alien_communication.jpg",
-      "startDate": "2025-03-10T22:00:00.000Z",
-      "teacher": "Dr. Extraterrestrial",
-      "description": "Decode intergalactic messages and learn to communicate with beings from outer space. No prior extraterrestrial language skills required."
-    },
-    {
-      "title": "Underwater Basket Weaving",
-      "id": 13,
-      "courseLength": 2,
-      "classroom": true,
-      "imageUrl": "underwater_basket_weaving.jpg",
-      "startDate": "2025-04-01T14:00:00.000Z",
-      "teacher": "Aqua Artisan",
-      "description": "Dive into the world of basket weaving, literally! Create aquatic masterpieces while submerged in a giant aquarium."
+      "startDate": "2024-08-25",
+      "courseLength": "1",
+      "description": "Dive into a world of crunchiness! Immerse yourself in a bath filled with Fruit Loops and unlock the secrets of sensory delight. Warning: May cause extreme happiness and cravings for breakfast cereal.",
+      "imageUrl": "fruit_loop_bath.jpg",
+      "classroom": "false",
+      "id": 11
     },
     {
       "title": "Extreme Pogo Stick Jumping",
       "id": 14,
       "courseLength": 3,
       "classroom": true,
-      "imageUrl": "pogo_stick.jpg",
-      "startDate": "2025-05-12T16:30:00.000Z",
+      "imageUrl": "swing_choreography.jpg",
+      "startDate": "2025-05-12",
       "teacher": "Bounce Master",
       "description": "Defy gravity and sanity with extreme pogo stick jumping. Safety gear provided, but bravery essential."
-    },
-    {
-      "title": "Dinosaur Riding Techniques",
-      "id": "16",
-      "courseLength": 4,
-      "classroom": false,
-      "imageUrl": "dinosaur_riding.jpg",
-      "startDate": "2025-06-23T09:00:00.000Z",
-      "teacher": "Prehistoric Wrangler",
-      "description": "Saddle up and embark on a Jurassic journey! Learn to ride dinosaurs with style and finesse."
     },
     {
       "title": "Ninja Training Camp",
       "id": 15,
       "courseLength": 6,
       "classroom": true,
-      "imageUrl": "ninja_training.jpg",
-      "startDate": "2025-07-15T20:15:00.000Z",
+      "imageUrl": "fruit_ninja_slicing.jpg",
+      "startDate": "2025-07-15",
       "teacher": "Sensei Stealth",
       "description": "Master the art of invisibility, throwing stars, and stealthy moves in this intensive ninja training camp. Black attire not included."
     },
@@ -155,10 +87,13 @@
       "id": 16,
       "courseLength": 2,
       "classroom": true,
-      "imageUrl": "haunted_house.jpg",
-      "startDate": "2025-08-28T18:45:00.000Z",
+      "imageUrl": "scary_doll_faces.jpg",
+      "startDate": "2025-08-28",
       "teacher": "Spooky Architect",
-      "description": "Create spine-chilling haunted houses that will terrify and delight. Perfect for aspiring Halloween enthusiasts."
+      "description": "Create spine-chilling haunted houses that will terrify and delight. Perfect for aspiring Halloween enthusiasts.",
+      "students": [
+        2
+      ]
     },
     {
       "title": "Swing Choreography Masterclass",
@@ -166,7 +101,7 @@
       "courseLength": 3,
       "classroom": true,
       "imageUrl": "swing_choreography.jpg",
-      "startDate": "2025-10-08T17:00:00.000Z",
+      "startDate": "2025-10-08",
       "teacher": "Swing Maestro",
       "description": "Dance, flip, and spin gracefully on a swing. Channel your inner circus performer in this unique swing choreography class.",
       "students": [
@@ -179,34 +114,36 @@
       "courseLength": 4,
       "classroom": true,
       "imageUrl": "lego_faces.jpg",
-      "startDate": "2025-11-20T14:15:00.000Z",
+      "startDate": "2025-11-20",
       "teacher": "Brick Artist",
-      "description": "Transform ordinary Lego bricks into expressive faces. Unleash your creativity in the world of plastic block portraiture."
-    },
-    {
-      "title": "Fruit Loop Bath Design",
-      "id": 20,
-      "courseLength": 1,
-      "classroom": false,
-      "imageUrl": "fruit_loop_bath.jpg",
-      "startDate": "2026-01-02T12:00:00.000Z",
-      "teacher": "Bath Alchemist",
-      "description": "Create a colorful and crunchy bath experience by designing your own Fruit Loop bath. Bathrobe and sense of humor required.",
+      "description": "Transform ordinary Lego bricks into expressive faces. Unleash your creativity in the world of plastic block portraiture.",
       "students": [
         2,
         3,
         4,
         5,
-        6
+        6,
+        7,
+        8
       ]
+    },
+    {
+      "title": "Fruit Loop Bath Design",
+      "teacher": "Bath Alchemist",
+      "startDate": "2024-01-29",
+      "courseLength": "1",
+      "description": "Create a colorful and crunchy bath experience by designing your own Fruit Loop bath. Bathrobe and sense of humor required.",
+      "imageUrl": "fruit_loop_bath.jpg",
+      "classroom": "false",
+      "id": 20
     },
     {
       "title": "Moose Mouth Yoga",
       "id": 21,
       "courseLength": 3,
       "classroom": true,
-      "imageUrl": "moose_open_mouth.jpg",
-      "startDate": "2026-03-22T16:30:00.000Z",
+      "imageUrl": "laughter_yoga.jpg",
+      "startDate": "2026-03-22",
       "teacher": "Yoga Antlers",
       "description": "Join this unique yoga class where participants mimic the majestic open-mouth posture of a moose. Antlers optional."
     },
@@ -216,7 +153,7 @@
       "courseLength": 1,
       "classroom": true,
       "imageUrl": "blue_orange_fruit.jpg",
-      "startDate": "2026-04-10T14:00:00.000Z",
+      "startDate": "2026-04-10",
       "teacher": "Fruit Explorer",
       "description": "Explore the mysterious world of blue oranges and other oddly colored fruits. Taste and discuss the peculiar flavors.",
       "students": [
@@ -224,53 +161,17 @@
         3,
         4,
         5,
-        6
+        6,
+        7,
+        8
       ]
-    },
-    {
-      "title": "",
-      "teacher": "",
-      "startDate": "",
-      "courseLength": "",
-      "description": "",
-      "imageUrl": "",
-      "id": 23
-    },
-    {
-      "title": "",
-      "teacher": "",
-      "startDate": "2024-01-12",
-      "courseLength": "",
-      "description": "",
-      "imageUrl": "",
-      "id": 24
-    },
-    {
-      "title": "",
-      "teacher": "",
-      "startDate": "",
-      "courseLength": "",
-      "description": "",
-      "imageUrl": "",
-      "id": 25
-    },
-    {
-      "title": "da",
-      "teacher": "",
-      "startDate": "",
-      "courseLength": "",
-      "description": "sa",
-      "imageUrl": "",
-      "id": 26
     }
   ],
   "users": [
     {
       "name": "Nathalie",
       "address": "Gata",
-      "email": "n@mail.com",
-      "phone": 1234,
-      "username": "nathalie",
+      "email": "admin@mail.com",
       "password": "123",
       "id": 1,
       "isAdmin": true,
@@ -279,11 +180,27 @@
     {
       "name": "Richard",
       "address": "Gata",
-      "email": "r@mail.com",
-      "phone": 1234,
-      "username": "r@mail.com",
+      "email": "student@mail.com",
       "password": "123",
       "id": 2,
+      "role": "student",
+      "courses": [
+        1,
+        24,
+        22,
+        20,
+        17,
+        18,
+        3,
+        16
+      ]
+    },
+    {
+      "name": "Annie",
+      "address": "Gata",
+      "email": "r@mail.com",
+      "password": "123",
+      "id": 3,
       "role": "student",
       "courses": [
         1,
@@ -295,64 +212,100 @@
       ]
     },
     {
-      "id": 3,
-      "name": "a@",
+      "name": "Kajsa",
       "address": "Gata",
-      "email": "mail",
-      "phone": 1234,
+      "email": "student2@mail.com",
       "password": "123",
-      "isAdmin": true,
-      "role": "admin"
-    },
-    {
       "id": 4,
-      "name": "user",
-      "email": "m@a.se",
-      "password": "123",
-      "isAdmin": false,
-      "role": "student"
-    },
-    {
-      "id": 5,
-      "name": "123",
-      "email": "123@m",
-      "password": "123",
-      "isAdmin": false,
-      "role": "student"
-    },
-    {
-      "id": 6,
-      "name": "123",
-      "email": "m@aaaaa.se",
-      "password": "123",
-      "isAdmin": false,
-      "role": "student"
-    },
-    {
-      "name": "1@",
-      "email": "1@a",
-      "password": "112",
-      "isAdmin": false,
       "role": "student",
-      "id": 7
+      "courses": [
+        1,
+        24,
+        22,
+        20,
+        17,
+        18
+      ]
     },
     {
-      "name": "nat",
-      "email": "2222@s",
+      "name": "Daniel",
+      "address": "Gata",
+      "email": "student3@mail.com",
       "password": "123",
-      "id": 8
+      "id": 4,
+      "role": "student",
+      "courses": [
+        1,
+        24,
+        22,
+        20,
+        17,
+        18
+      ]
     },
     {
-      "name": "nat",
-      "email": "2222@ss",
+      "name": "Oscar",
+      "address": "Gata",
+      "email": "student4@mail.com",
       "password": "123",
-      "id": 9
+      "id": 5,
+      "role": "student",
+      "courses": [
+        1,
+        24,
+        22,
+        20,
+        17,
+        18
+      ]
     },
     {
-      "name": "2@s",
-      "email": "2@s",
+      "name": "Emelia",
+      "address": "Gata",
+      "email": "student5@mail.com",
       "password": "123",
-      "id": 10
+      "id": 6,
+      "role": "student",
+      "courses": [
+        1,
+        24,
+        22,
+        20,
+        17,
+        18
+      ]
+    },
+    {
+      "name": "Ellen",
+      "address": "Gata",
+      "email": "student6@mail.com",
+      "password": "123",
+      "id": 7,
+      "role": "student",
+      "courses": [
+        1,
+        24,
+        22,
+        20,
+        17,
+        18
+      ]
+    },
+    {
+      "name": "Sofie",
+      "address": "Gata",
+      "email": "student7@mail.com",
+      "password": "123",
+      "id": 8,
+      "role": "student",
+      "courses": [
+        1,
+        24,
+        22,
+        20,
+        17,
+        18
+      ]
     }
   ]
 }

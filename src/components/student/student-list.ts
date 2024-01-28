@@ -34,9 +34,9 @@ const initPage = async () => {
       // Link container for list item title
       const listItemLink: HTMLAnchorElement = document.createElement('a');
 
-      listItemLink.href = constructPath(
-        `student-details.html?id=${student.id}`
-      );
+      // listItemLink.href = constructPath(
+      //   `student-details.html?id=${student.id}`
+      // );
 
       // List item title
       const listItemTitle: HTMLHeadingElement = document.createElement('h5');

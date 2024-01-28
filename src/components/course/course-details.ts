@@ -94,14 +94,12 @@ const initPage = async () => {
     // Edit for admin
     const editBtn = document.createElement('button');
     editBtn.textContent = 'Edit';
-    // editBtn.setAttribute('data-id', courseId);
     editBtn.classList.add('edit-btn', 'btn', 'btn-primary');
     editBtn.onclick = () => navigateTo(`./edit-course.html?id=${courseId}`);
 
     // Delete for admin
     const deleteBtn = document.createElement('button');
     deleteBtn.textContent = 'Delete';
-    // deleteBtn.setAttribute('data-id', courseId);
     deleteBtn.classList.add('delete-btn', 'btn', 'btn-primary');
 
     deleteBtn.onclick = () => {

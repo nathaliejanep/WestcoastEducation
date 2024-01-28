@@ -50,12 +50,6 @@ const initPage = async () => {
     listItemLink.appendChild(listItemTitle);
     listItemWrapper.append(listItemLink, listItemDate);
 
-    // // Book for student
-    // const bookBtn = document.createElement('button');
-    // bookBtn.textContent = 'Book';
-    // bookBtn.setAttribute('data-id', stringifiedId);
-    // bookBtn.classList.add('book-btn', 'btn', 'btn-primary', 'ml-2');
-
     // Edit for admin
     const editBtn = document.createElement('button');
     editBtn.textContent = 'Edit';
@@ -73,9 +67,6 @@ const initPage = async () => {
       location.reload();
     };
 
-    // if (getUserRole() === 'student') {
-    //   listItemWrapper.appendChild(bookBtn);
-    // }
     if (getUserRole() === 'admin') {
       listItemWrapper.append(editBtn, deleteBtn);
     }

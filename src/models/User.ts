@@ -1,5 +1,3 @@
-import { Course } from './Course';
-
 export interface User {
   name: string;
   address?: string;

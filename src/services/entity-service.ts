@@ -1,5 +1,3 @@
-import { Course } from '../models/Course.js';
-import { convertForm } from '../utils/helpers.js';
 import ApiService from './api-service.js';
 
 /**

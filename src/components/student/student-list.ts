@@ -34,10 +34,6 @@ const initPage = async () => {
       // Link container for list item title
       const listItemLink: HTMLAnchorElement = document.createElement('a');
 
-      // listItemLink.href = constructPath(
-      //   `student-details.html?id=${student.id}`
-      // );
-
       // List item title
       const listItemTitle: HTMLHeadingElement = document.createElement('h5');
       listItemTitle.classList.add('mb-1');
@@ -45,26 +41,7 @@ const initPage = async () => {
       listItemLink.appendChild(listItemTitle);
       listItemWrapper.appendChild(listItemLink);
 
-      // Edit for admin
-      // const editBtn = document.createElement('button');
-      // editBtn.textContent = 'Edit';
-      // editBtn.setAttribute('data-id', stringifiedId);
-      // editBtn.classList.add('edit-btn', 'btn', 'btn-primary', 'ml-auto');
-      // editBtn.onclick = () =>
-      //   navigateTo(`./edit-student.html?id=${student.id}`);
-
-      // Delete for admin
-      const deleteBtn = document.createElement('button');
-      deleteBtn.textContent = 'Delete';
-      deleteBtn.setAttribute('data-id', stringifiedId);
-      deleteBtn.classList.add('delete-btn', 'btn', 'btn-primary', 'ml-2');
-      deleteBtn.onclick = async () => {
-        await userService.deleteEntity(student.id);
-        location.reload();
-      };
-
       // Append
-      // listItemWrapper.append(editBtn, deleteBtn);
       listContainer.append(listItemWrapper);
       root.appendChild(listContainer);
     });

@@ -13,18 +13,6 @@ export interface User {
   isAdmin: boolean;
 }
 
-// export interface Student extends User {
-//   // Student name
-//   // Address
-//   // E-mail
-//   // Mobile nr
-//   enrolledCourses: Course[];
-// }
-
-// export interface Teacher extends User {
-//   isAdmin: boolean;
-// }
-
 export interface AuthenticatedUser extends User {
   email: string;
   password: string;

@@ -16,7 +16,6 @@ const initPage = async () => {
   const getCourse = await courseService.getEntity(parseInt(courseId));
   const entries = new URLSearchParams(getCourse).entries();
 
-  // FIXME !!! Students gets overwritten and empty
   for (let [key, value] of entries) {
     console.log('key', key, 'value', value);
 

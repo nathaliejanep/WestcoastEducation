@@ -16,7 +16,7 @@ const initPage = async () => {
 
     // Container for whole list
     const listContainer: HTMLDivElement = document.createElement('div');
-    listContainer.classList.add('list-group', 'course-card'); // not sure wr need course-card
+    listContainer.classList.add('list-group');
 
     studentList.forEach((student) => {
       const stringifiedId = student.id.toString();
@@ -38,14 +38,6 @@ const initPage = async () => {
         `student-details.html?id=${student.id}`
       );
 
-      // XXX ta bort eller ändra ?
-      // if (window.location.pathname.includes('/dashboard.html')) {
-      //   listItemLink.href = `./student-details.html?id=${student.id}`;
-      // }
-      //   listItemLink.classList.add('list-group-item', 'list-group-item-action');
-      // listItemLink.setAttribute('course-id', stringifiedId);
-      // listItemLink.setAttribute('aria-current', 'true');
-
       // List item title
       const listItemTitle: HTMLHeadingElement = document.createElement('h5');
       listItemTitle.classList.add('mb-1');
@@ -53,21 +45,13 @@ const initPage = async () => {
       listItemLink.appendChild(listItemTitle);
       listItemWrapper.appendChild(listItemLink);
 
-      // XXX ta bort eller ersätt
-      // const listItemDate = document.createElement('small');
-      // listItemDate.classList.add('ml-auto');
-      // listItemDate.textContent = `Start Date: ${student.role}`;
-      // listItemLink.appendChild(listItemTitle);
-      //  listItemWrapper.append(listItemLink, listItemDate);
-
-      // XXX delete or fix
       // Edit for admin
-      const editBtn = document.createElement('button');
-      editBtn.textContent = 'Edit';
-      editBtn.setAttribute('data-id', stringifiedId);
-      editBtn.classList.add('edit-btn', 'btn', 'btn-primary', 'ml-auto');
-      editBtn.onclick = () =>
-        navigateTo(`./edit-student.html?id=${student.id}`);
+      // const editBtn = document.createElement('button');
+      // editBtn.textContent = 'Edit';
+      // editBtn.setAttribute('data-id', stringifiedId);
+      // editBtn.classList.add('edit-btn', 'btn', 'btn-primary', 'ml-auto');
+      // editBtn.onclick = () =>
+      //   navigateTo(`./edit-student.html?id=${student.id}`);
 
       // Delete for admin
       const deleteBtn = document.createElement('button');
@@ -76,10 +60,11 @@ const initPage = async () => {
       deleteBtn.classList.add('delete-btn', 'btn', 'btn-primary', 'ml-2');
       deleteBtn.onclick = async () => {
         await userService.deleteEntity(student.id);
-        location.reload(); //TODO: change this
+        location.reload();
       };
 
-      listItemWrapper.append(editBtn, deleteBtn);
+      // Append
+      // listItemWrapper.append(editBtn, deleteBtn);
       listContainer.append(listItemWrapper);
       root.appendChild(listContainer);
     });

@@ -2,13 +2,13 @@
   "courses": [
     {
       "title": "Introduction to Clown Physics",
-      "id": 2,
-      "courseLength": 12,
-      "classroom": false,
-      "imageUrl": "clown_physics.jpg",
-      "startDate": "2024-04-05T09:00:00.000Z",
       "teacher": "Prof. Honkington",
-      "description": "Explore the fundamental principles of physics through the hilarious lens of clowning. No serious faces allowed!"
+      "startDate": "2024-01-13",
+      "courseLength": "12",
+      "description": "Explore the fundamental principles of physics through the hilarious lens of clowning. No serious faces allowed!",
+      "imageUrl": "clown_physics.jpg",
+      "classroom": "false",
+      "id": 2
     },
     {
       "title": "Extreme Tickling Techniques",
@@ -16,7 +16,7 @@
       "courseLength": 6,
       "classroom": true,
       "imageUrl": "tickling_techniques.jpg",
-      "startDate": "2024-05-20T13:45:00.000Z",
+      "startDate": "2024-05-20",
       "teacher": "Tickle Master Flex",
       "description": "Tickle your funny bone with this course on extreme tickling techniques. Warning: Side effects may include uncontrollable laughter!"
     },
@@ -26,7 +26,7 @@
       "courseLength": 4,
       "classroom": false,
       "imageUrl": "whoopee_cushion_design.jpg",
-      "startDate": "2024-06-12T11:30:00.000Z",
+      "startDate": "2024-06-12",
       "teacher": "Pranksterella",
       "description": "Master the art of whoopee cushion design and surprise your friends with perfectly timed pranks. Get ready for laughs and gasps!"
     },
@@ -36,7 +36,7 @@
       "courseLength": 7,
       "classroom": true,
       "imageUrl": "napkin_folding_clown_dinners.jpg",
-      "startDate": "2024-07-08T14:15:00.000Z",
+      "startDate": "2024-07-08",
       "teacher": "Foldy McJester",
       "description": "Learn the fine art of napkin folding with a clownish twist. Impress your guests at clown-themed dinners with creatively folded napkins."
     },
@@ -46,7 +46,7 @@
       "courseLength": 10,
       "classroom": true,
       "imageUrl": "juggling_chainsaws.jpg",
-      "startDate": "2024-08-22T09:30:00.000Z",
+      "startDate": "2024-08-22",
       "teacher": "Blade Juggler Extraordinaire",
       "description": "Embark on a thrilling journey into the world of juggling chainsaws. Safety first, laughs second. Disclaimer: Don't try this at home!"
     },
@@ -56,7 +56,7 @@
       "courseLength": 8,
       "classroom": false,
       "imageUrl": "cartoon_impersonation.jpg",
-      "startDate": "2024-09-17T12:00:00.000Z",
+      "startDate": "2024-09-17",
       "teacher": "Toony McVoiceover",
       "description": "Bring your favorite cartoon characters to life with this course on cartoon character impersonation. Get ready to sound silly and have a blast!"
     },
@@ -66,7 +66,7 @@
       "courseLength": 6,
       "classroom": true,
       "imageUrl": "dance_like_no_one_watching.jpg",
-      "startDate": "2024-10-05T17:00:00.000Z",
+      "startDate": "2024-10-05T",
       "teacher": "Groovy McGrooverson",
       "description": "Shake off your inhibitions and dance like no one's watching! This course is all about having fun on the dance floor, no judgment allowed."
     },
@@ -76,7 +76,7 @@
       "courseLength": 3,
       "classroom": false,
       "imageUrl": "sarcasm_appreciation.jpg",
-      "startDate": "2024-11-11T20:00:00.000Z",
+      "startDate": "2024-11-11",
       "teacher": "Sir Snarkalot",
       "description": "Sharpen your wit and master the art of sarcasm with Sir Snarkalot. Warning: Participants may develop a keen sense of humor."
     },
@@ -226,6 +226,42 @@
         5,
         6
       ]
+    },
+    {
+      "title": "",
+      "teacher": "",
+      "startDate": "",
+      "courseLength": "",
+      "description": "",
+      "imageUrl": "",
+      "id": 23
+    },
+    {
+      "title": "",
+      "teacher": "",
+      "startDate": "2024-01-12",
+      "courseLength": "",
+      "description": "",
+      "imageUrl": "",
+      "id": 24
+    },
+    {
+      "title": "",
+      "teacher": "",
+      "startDate": "",
+      "courseLength": "",
+      "description": "",
+      "imageUrl": "",
+      "id": 25
+    },
+    {
+      "title": "da",
+      "teacher": "",
+      "startDate": "",
+      "courseLength": "",
+      "description": "sa",
+      "imageUrl": "",
+      "id": 26
     }
   ],
   "users": [
@@ -299,6 +335,24 @@
       "isAdmin": false,
       "role": "student",
       "id": 7
+    },
+    {
+      "name": "nat",
+      "email": "2222@s",
+      "password": "123",
+      "id": 8
+    },
+    {
+      "name": "nat",
+      "email": "2222@ss",
+      "password": "123",
+      "id": 9
+    },
+    {
+      "name": "2@s",
+      "email": "2@s",
+      "password": "123",
+      "id": 10
     }
   ]
 }

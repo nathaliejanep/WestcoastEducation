@@ -1,8 +1,3 @@
-// Register student
-// Get future or active courses (status)
-// Get hisory of courses
-// Edit student
-// TODO: move user methods to here
 import { User } from '../models/User.js';
 import EntityService from './entity-service.js';
 
@@ -23,10 +18,8 @@ export default class UserService extends EntityService<User> {
     });
 
     if (courseExists) {
-      // TODO: implement logic
-      console.log('course exist alreadt');
+      console.log('course exist already');
     } else {
-      console.log('push course');
       await this.updateEntity(userId, updatedUser);
     }
   }

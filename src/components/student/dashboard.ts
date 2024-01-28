@@ -1,19 +1,13 @@
 import { Course } from '../../models/Course.js';
-import { User } from '../../models/User.js';
 import CourseService from '../../services/course-service.js';
 import UserService from '../../services/user-service.js';
-import config from '../../utils/config.js';
+import c from '../../utils/config.js';
+import { navigateTo } from '../../utils/helpers.js';
 
-const userService = new UserService(`${config.BASE_URL}${config.USERS_PATH}`);
-// TODO: move needed code and then delete
-const getUserDetails = async (userId: number): Promise<User> => {
-  const user = await userService.getEntity(userId);
-  return user;
-};
+const userService = new UserService(`${c.BASE_URL}${c.USERS_PATH}`);
+
 const initPage = async () => {
-  const courseService = new CourseService(
-    `${config.BASE_URL}${config.COURSES_PATH}`
-  );
+  const courseService = new CourseService(`${c.BASE_URL}${c.COURSES_PATH}`);
 
   const root = document.getElementById('root') as HTMLElement;
   const courseList: Course[] = await courseService.getList();
@@ -21,7 +15,6 @@ const initPage = async () => {
   courseList.forEach((course) => {
     const courseCard = document.createElement('div');
 
-    courseCard.classList.add('course-card');
     courseCard.setAttribute('course-id', course.id.toString());
     root.appendChild(courseCard);
 
@@ -40,24 +33,18 @@ const initPage = async () => {
     btn.addEventListener('click', () => {
       const courseId = btn.getAttribute('data-id');
       if (courseId) {
-        location.href = `./course-details.html?id=${courseId}`;
+        navigateTo(`./course-details.html?id=${courseId}`);
       }
     });
   });
 
   bookBtns.forEach((btn) => {
     btn.addEventListener('click', async () => {
-      // Make the callback function async
       const courseId = btn.getAttribute('data-id');
       const authUserId = localStorage.getItem('auth');
 
+      // Add student to course
       if (courseId && authUserId) {
-        // TODO delete?
-        // const course = await courseService.getEntity(parseInt(courseId));
-        // const user = await userService.getEntity(parseInt(authUserId));
-
-        // Add student to course
-        // courseService.enrollStudent(parseInt(courseId), user);
         courseService.enrollStudent(+courseId, +authUserId);
         userService.enrollCourse(+authUserId, +courseId);
       }

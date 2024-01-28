@@ -1,7 +1,7 @@
 import { Course } from '../../models/Course.js';
 import CourseService from '../../services/course-service.js';
 import config from '../../utils/config.js';
-import { getUserRole, navigateTo } from '../../utils/helpers.js';
+import { constructPath, getUserRole, navigateTo } from '../../utils/helpers.js';
 
 const initPage = async () => {
   const courseService = new CourseService(
@@ -17,7 +17,7 @@ const initPage = async () => {
 
   // Container for whole list
   const listContainer: HTMLDivElement = document.createElement('div');
-  listContainer.classList.add('list-group', 'course-card'); // not sure wr need course-card
+  listContainer.classList.add('list-group');
 
   courseList.forEach((course) => {
     const stringifiedId = course.id.toString();
@@ -27,22 +27,15 @@ const initPage = async () => {
     listItemWrapper.classList.add(
       'd-flex',
       'w-100',
-      // 'justify-content-between',
       'align-items-center',
-      // 'justify-content-center',
       'list-group-item',
       'list-group-item-action'
     );
 
     // Link container for list item title
     const listItemLink: HTMLAnchorElement = document.createElement('a');
+    listItemLink.href = constructPath(`course-details.html?id=${course.id}`);
 
-    listItemLink.href = `src/pages/course-details.html?id=${course.id}`;
-
-    if (window.location.pathname.includes('/dashboard.html')) {
-      listItemLink.href = `./course-details.html?id=${course.id}`;
-    }
-    //   listItemLink.classList.add('list-group-item', 'list-group-item-action');
     listItemLink.setAttribute('course-id', stringifiedId);
     listItemLink.setAttribute('aria-current', 'true');
 
@@ -67,7 +60,7 @@ const initPage = async () => {
     const editBtn = document.createElement('button');
     editBtn.textContent = 'Edit';
     editBtn.setAttribute('data-id', stringifiedId);
-    editBtn.classList.add('edit-btn', 'btn', 'btn-primary', 'ml-auto');
+    editBtn.classList.add('edit-btn', 'btn', 'btn-primary', 'ml-2');
     editBtn.onclick = () => navigateTo(`./edit-course.html?id=${course.id}`);
 
     // Delete for admin
@@ -77,7 +70,7 @@ const initPage = async () => {
     deleteBtn.classList.add('delete-btn', 'btn', 'btn-primary', 'ml-2');
     deleteBtn.onclick = async () => {
       await courseService.deleteEntity(course.id);
-      location.reload(); //TODO: change this
+      location.reload();
     };
 
     // if (getUserRole() === 'student') {

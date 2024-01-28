@@ -12,7 +12,8 @@ const initPage = async () => {
 
   let courseId = +location.search.split('=')[1];
   const course = await courseService.getEntity(courseId);
-  console.log(course.students);
+  const studentIds = course.students;
+  const enrolledStudents = await userService.getEntitiesById(studentIds ?? []);
   const root = document.getElementById('root');
 
   if (root) {
@@ -54,15 +55,9 @@ const initPage = async () => {
     courseTeacher.textContent = `Teacher: ${course.teacher}`;
 
     // Enrolled students
-    const studentIds = course.students;
-
-    const enrolledStudents = await userService.getEntitiesById(
-      studentIds ?? []
-    );
-
     const courseStudentTitle = document.createElement('p');
     courseStudentTitle.textContent = 'Enrolled students:';
-    if (enrolledStudents === null) {
+    if (enrolledStudents.length === 0) {
       courseStudentTitle.textContent = 'No enrolled students';
     }
 

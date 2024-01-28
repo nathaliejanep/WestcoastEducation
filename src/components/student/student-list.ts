@@ -1,12 +1,10 @@
 import { User } from '../../models/User.js';
 import UserService from '../../services/user-service.js';
 import config from '../../utils/config.js';
-import { navigateTo } from '../../utils/helpers.js';
+import { constructPath, navigateTo } from '../../utils/helpers.js';
 
 const initPage = async () => {
-  const userService = new UserService(
-    `${config.BASE_URL}${config.COURSES_PATH}`
-  );
+  const userService = new UserService(`${config.BASE_URL}${config.USERS_PATH}`);
   const studentList: User[] = await userService.getList();
   const root = document.getElementById('root') as HTMLDivElement;
 
@@ -36,26 +34,33 @@ const initPage = async () => {
       // Link container for list item title
       const listItemLink: HTMLAnchorElement = document.createElement('a');
 
-      listItemLink.href = `src/pages/student-details.html?id=${student.id}`;
+      listItemLink.href = constructPath(
+        `student-details.html?id=${student.id}`
+      );
 
-      if (window.location.pathname.includes('/dashboard.html')) {
-        listItemLink.href = `./student-details.html?id=${student.id}`;
-      }
+      // XXX ta bort eller ändra ?
+      // if (window.location.pathname.includes('/dashboard.html')) {
+      //   listItemLink.href = `./student-details.html?id=${student.id}`;
+      // }
       //   listItemLink.classList.add('list-group-item', 'list-group-item-action');
-      listItemLink.setAttribute('course-id', stringifiedId);
-      listItemLink.setAttribute('aria-current', 'true');
+      // listItemLink.setAttribute('course-id', stringifiedId);
+      // listItemLink.setAttribute('aria-current', 'true');
 
       // List item title
       const listItemTitle: HTMLHeadingElement = document.createElement('h5');
       listItemTitle.classList.add('mb-1');
       listItemTitle.textContent = student.name;
-
-      const listItemDate = document.createElement('small');
-      listItemDate.classList.add('ml-auto');
-      listItemDate.textContent = `Start Date: ${student.role}`;
       listItemLink.appendChild(listItemTitle);
-      listItemWrapper.append(listItemLink, listItemDate);
+      listItemWrapper.appendChild(listItemLink);
 
+      // XXX ta bort eller ersätt
+      // const listItemDate = document.createElement('small');
+      // listItemDate.classList.add('ml-auto');
+      // listItemDate.textContent = `Start Date: ${student.role}`;
+      // listItemLink.appendChild(listItemTitle);
+      //  listItemWrapper.append(listItemLink, listItemDate);
+
+      // XXX delete or fix
       // Edit for admin
       const editBtn = document.createElement('button');
       editBtn.textContent = 'Edit';

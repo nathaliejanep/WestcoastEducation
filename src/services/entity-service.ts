@@ -30,6 +30,11 @@ class EntityService<T> {
     return entity;
   };
 
+  getEntitiesById = async (ids: number[]): Promise<T[]> => {
+    const entityPromises = ids.map((id) => this.getEntity(id));
+    return Promise.all(entityPromises);
+  };
+
   addEntity = async (entity: T) => {
     const http = new ApiService(`${this.url}/`);
     await http.add<T>(entity);

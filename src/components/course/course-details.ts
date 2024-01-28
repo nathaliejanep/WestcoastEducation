@@ -1,5 +1,4 @@
 import CourseService from '../../services/course-service.js';
-import EntityService from '../../services/entity-service.js';
 import UserService from '../../services/user-service.js';
 import config from '../../utils/config.js';
 import { renderResultMessage } from '../../utils/dom-helpers.js';
@@ -12,8 +11,8 @@ const initPage = async () => {
   const userService = new UserService(`${config.BASE_URL}${config.USERS_PATH}`);
 
   let courseId = +location.search.split('=')[1];
-  const getCourse = await courseService.getEntity(courseId);
-
+  const course = await courseService.getEntity(courseId);
+  console.log(course.students);
   const root = document.getElementById('root');
 
   if (root) {
@@ -24,31 +23,57 @@ const initPage = async () => {
       'align-items-center'
     );
 
+    // Course Title
     const courseTitle = document.createElement('h1');
-    // courseTitle.classList.add('title');
-    courseTitle.textContent = getCourse.title;
+    courseTitle.textContent = course.title;
 
+    // Course Image
     const courseImg = document.createElement('img');
     courseImg.classList.add('w-100');
-    courseImg.src = `../../src/assets/images/${getCourse.imageUrl}`;
+    courseImg.src = `../../src/assets/images/${course.imageUrl}`;
 
+    // Course Description
     const courseDescription = document.createElement('p');
     courseDescription.classList.add('text-center');
-    courseDescription.textContent = getCourse.description;
+    courseDescription.textContent = course.description;
 
+    // Course Classroom or Remote
     const courseClassroom = document.createElement('p');
     courseClassroom.classList.add('text-center');
     courseClassroom.textContent = `Location: ${
-      getCourse.classroom ? 'Gothenburg' : 'Remote'
+      course.classroom ? 'Gothenburg' : 'Remote'
     }`;
 
+    // Course Start Date
     const courseStartDate = document.createElement('p');
     courseStartDate.classList.add('text-center');
-    courseStartDate.textContent = `Start Date: ${getCourse.startDate}`;
+    courseStartDate.textContent = `Start Date: ${course.startDate}`;
 
     const courseTeacher = document.createElement('p');
     courseTeacher.classList.add('text-center');
-    courseTeacher.textContent = `Teacher: ${getCourse.teacher}`;
+    courseTeacher.textContent = `Teacher: ${course.teacher}`;
+
+    // Enrolled students
+    const studentIds = course.students;
+
+    const enrolledStudents = await userService.getEntitiesById(
+      studentIds ?? []
+    );
+
+    const courseStudentTitle = document.createElement('p');
+    courseStudentTitle.textContent = 'Enrolled students:';
+    if (enrolledStudents === null) {
+      courseStudentTitle.textContent = 'No enrolled students';
+    }
+
+    const courseStudentsUl = document.createElement('ul');
+    courseStudentsUl.classList.add('text-center', 'list-unstyled');
+
+    enrolledStudents.forEach((student) => {
+      const courseStudentsLi = document.createElement('li');
+      courseStudentsLi.textContent = student.name;
+      courseStudentsUl.appendChild(courseStudentsLi);
+    });
 
     // Book for student
     const bookBtn = document.createElement('button');
@@ -69,7 +94,6 @@ const initPage = async () => {
 
         renderResultMessage(messageContainer, resultMessage);
       }
-      console.log('first');
     };
 
     // Edit for admin
@@ -105,7 +129,7 @@ const initPage = async () => {
       courseContainer.appendChild(bookBtn);
     }
     if (getUserRole() === 'admin') {
-      courseContainer.append(editBtn, deleteBtn);
+      courseContainer.append(courseStudentTitle, courseStudentsUl, deleteBtn);
     }
     courseContainer.appendChild(messageContainer);
     root.appendChild(courseContainer);

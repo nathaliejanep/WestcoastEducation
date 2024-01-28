@@ -161,23 +161,6 @@
       "description": "Create spine-chilling haunted houses that will terrify and delight. Perfect for aspiring Halloween enthusiasts."
     },
     {
-      "title": "Creepy Doll Face Painting",
-      "id": 17,
-      "courseLength": 2,
-      "classroom": true,
-      "imageUrl": "scary_doll_faces.jpg",
-      "startDate": "2025-09-10T15:30:00.000Z",
-      "teacher": "Master Creepster",
-      "description": "Unlock your inner eerie artist and learn to paint terrifying faces on dolls. Not recommended for the faint of heart.",
-      "students": [
-        2,
-        3,
-        4,
-        5,
-        6
-      ]
-    },
-    {
       "title": "Swing Choreography Masterclass",
       "id": 18,
       "courseLength": 3,

@@ -1,4 +1,5 @@
 import { AuthenticatedUser, User } from '../models/User.js';
+import { convertForm } from '../utils/helpers.js';
 import EntityService from './entity-service.js';
 
 export default class AuthService extends EntityService<User> {
@@ -55,8 +56,14 @@ export default class AuthService extends EntityService<User> {
     return this.authenticatedUser;
   }
 
-  async signup(user: User) {
-    await this.addEntity(user);
+  // async signup(user: User) {
+  //   await this.addEntity(user);
+  // }
+
+  async signup(form: HTMLFormElement) {
+    const user = new FormData(form);
+    const userObj: User = convertForm(user);
+    await this.addEntity(userObj);
   }
 
   logout(): void {

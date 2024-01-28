@@ -13,11 +13,11 @@ const initPage = async () => {
 
   const getCourse = await courseService.getEntity(parseInt(courseId));
   const entries = new URLSearchParams(getCourse).entries();
-
+  // FIXME !!! Students gets deleted
   for (let [key, value] of entries) {
     console.log('key', key, 'value', value);
 
-    if (key !== 'id') {
+    if (key !== 'id' && key !== 'students') {
       const input = form.elements.namedItem(key) as HTMLInputElement;
       input.value = value;
     }

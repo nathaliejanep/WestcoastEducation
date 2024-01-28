@@ -12,4 +12,13 @@ const getUserRole = () => {
   return localStorage.getItem('userRole');
 };
 
-export { convertForm, navigateTo, getUserRole };
+const getAuthId = () => {
+  return localStorage.getItem('auth');
+};
+const constructPath = (relativePath: string) => {
+  const isRootIndex = window.location.pathname.endsWith('index.html');
+  const basePath = isRootIndex ? '' : '/src/pages';
+  return `${basePath}/${relativePath}`;
+};
+
+export { convertForm, navigateTo, getUserRole, getAuthId, constructPath };

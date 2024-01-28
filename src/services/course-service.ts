@@ -1,4 +1,5 @@
 import { Course } from '../models/Course.js';
+import { convertForm } from '../utils/helpers.js';
 import EntityService from './entity-service.js';
 
 // FIXME: make sure all exports are done the same
@@ -52,5 +53,22 @@ export default class CourseService extends EntityService<Course> {
     const topCourses = sortedCourses.slice(0, 4);
     console.log(topCourses);
     return topCourses;
+  }
+
+  // const addCourse = async (e: Event) => {
+  //   e.preventDefault();
+
+  //   const course = new FormData(form);
+  //   const courseObj: Course = convertForm(course);
+
+  //   await courseService.addEntity(courseObj);
+  // };
+
+  // TODO: maybe move this to entity service and make global?
+  async addCourse(form: HTMLFormElement) {
+    const course = new FormData(form);
+    const courseObj: Course = convertForm(course);
+
+    await this.addEntity(courseObj);
   }
 }

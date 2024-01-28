@@ -23,7 +23,8 @@ const initPage = () => {
       //TODO: Message in UI
       console.log('Email exists already try different');
     } else {
-      await authService.addEntity(userObj);
+      // await authService.addEntity(userObj);
+      await authService.signup(form);
     }
   };
 

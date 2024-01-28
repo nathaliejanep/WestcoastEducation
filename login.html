@@ -7,7 +7,12 @@
       content="width=device-width, initial-scale=1.0"
     />
     <script
-      src="../../dist/components/auth/login.js"
+      src="/dist/components/auth/login.js"
+      type="module"
+      defer
+    ></script>
+    <script
+      src="/dist/components/nav/nav.js"
       type="module"
       defer
     ></script>
@@ -20,6 +25,7 @@
     <title>Log In</title>
   </head>
   <body>
+    <nav id="nav"></nav>
     <h1>Log in</h1>
     <form id="login-form">
       <!-- TODO: Fix autocomplete-->

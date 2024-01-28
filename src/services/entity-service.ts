@@ -1,3 +1,5 @@
+import { Course } from '../models/Course.js';
+import { convertForm } from '../utils/helpers.js';
 import ApiService from './api-service.js';
 
 /**
@@ -33,7 +35,6 @@ class EntityService<T> {
     await http.add<T>(entity);
   };
 
-  // TODO: Check if this has to be string
   deleteEntity = async (id: number) => {
     const http = new ApiService(`${this.url}/${id}`);
     await http.delete();

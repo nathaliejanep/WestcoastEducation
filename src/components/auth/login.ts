@@ -1,7 +1,7 @@
 import { AuthenticatedUser, User } from '../../models/User.js';
 import AuthService from '../../services/auth-service.js';
 import config from '../../utils/config.js';
-import { convertForm, navigateTo } from '../../utils/helpers.js';
+import { constructPath, convertForm, navigateTo } from '../../utils/helpers.js';
 
 const initPage = async () => {
   const authService = new AuthService(`${config.BASE_URL}${config.USERS_PATH}`);
@@ -15,10 +15,7 @@ const initPage = async () => {
 
     const { email, password } = userObj;
 
-    console.log(email);
-
     const isAuth = await authService.authenticate(email, password);
-
     // TODO fix login func
     // if admin go to admin
 
@@ -30,13 +27,12 @@ const initPage = async () => {
         console.log('Authentication successful');
 
         if (authService.isAdmin(authenticatedUser)) {
-          console.log('admin');
-          // window.location.replace('/src/pages/admin.html');
-          // location.href = `./admin.html`;
-          navigateTo('./admin.html');
+          const path = constructPath('admin.html');
+          navigateTo(path);
         } else {
-          // window.location.replace('/src/pages/dashboard.html');
-          location.href = `./dashboard.html`;
+          const path = constructPath('dashboard.html');
+          navigateTo(path);
+          // location.href = `./dashboard.html`;
 
           console.log('not admin');
         }

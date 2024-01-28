@@ -2,22 +2,25 @@ import { Course } from '../../models/Course.js';
 import EntityService from '../../services/entity-service.js';
 import { convertForm } from '../../utils/helpers.js';
 import config from '../../utils/config.js';
+import CourseService from '../../services/course-service.js';
 
 const initPage = () => {
   const form = document.getElementById('add-course-form') as HTMLFormElement;
   console.log(config.BASE_URL);
 
-  const courseService = new EntityService<Course>(
+  const courseService = new CourseService(
     `${config.BASE_URL}${config.COURSES_PATH}`
   );
 
   const addCourse = async (e: Event) => {
-    e.preventDefault();
+    // await courseService.addCourse(form);
 
-    const course = new FormData(form);
-    const courseObj: Course = convertForm(course);
+    // e.preventDefault();
 
-    await courseService.addEntity(courseObj);
+    // const course = new FormData(form);
+    // const courseObj: Course = convertForm(course);
+
+    await courseService.addCourse(form);
   };
 
   form.addEventListener('submit', addCourse);

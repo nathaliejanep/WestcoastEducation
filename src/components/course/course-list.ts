@@ -10,90 +10,86 @@ const initPage = async () => {
   const courseList: Course[] = await courseService.getList();
   const root = document.getElementById('root') as HTMLDivElement;
 
-  if (root) {
-    const courseH: HTMLHeadingElement = document.createElement('h1');
-    courseH.innerText = 'Courses';
+  const courseH: HTMLHeadingElement = document.createElement('h1');
+  courseH.innerText = 'Courses';
 
-    root.appendChild(courseH);
+  root.appendChild(courseH);
 
-    // Container for whole list
-    const listContainer: HTMLDivElement = document.createElement('div');
-    listContainer.classList.add('list-group', 'course-card'); // not sure wr need course-card
+  // Container for whole list
+  const listContainer: HTMLDivElement = document.createElement('div');
+  listContainer.classList.add('list-group', 'course-card'); // not sure wr need course-card
 
-    courseList.forEach((course) => {
-      const stringifiedId = course.id.toString();
+  courseList.forEach((course) => {
+    const stringifiedId = course.id.toString();
 
-      // Wrapper for list item (link) and (buttons)
-      const listItemWrapper = document.createElement('div');
-      listItemWrapper.classList.add(
-        'd-flex',
-        'w-100',
-        // 'justify-content-between',
-        'align-items-center',
-        // 'justify-content-center',
-        'list-group-item',
-        'list-group-item-action'
-      );
+    // Wrapper for list item (link) and (buttons)
+    const listItemWrapper = document.createElement('div');
+    listItemWrapper.classList.add(
+      'd-flex',
+      'w-100',
+      // 'justify-content-between',
+      'align-items-center',
+      // 'justify-content-center',
+      'list-group-item',
+      'list-group-item-action'
+    );
 
-      // Link container for list item title
-      const listItemLink: HTMLAnchorElement = document.createElement('a');
+    // Link container for list item title
+    const listItemLink: HTMLAnchorElement = document.createElement('a');
 
-      if (window.location.pathname.includes('/index.html')) {
-        listItemLink.href = `src/pages/course-details.html?id=${course.id}`;
-      }
+    listItemLink.href = `src/pages/course-details.html?id=${course.id}`;
 
-      if (window.location.pathname.includes('/dashboard.html')) {
-        listItemLink.href = `./course-details.html?id=${course.id}`;
-      }
-      //   listItemLink.classList.add('list-group-item', 'list-group-item-action');
-      listItemLink.setAttribute('course-id', stringifiedId);
-      listItemLink.setAttribute('aria-current', 'true');
+    if (window.location.pathname.includes('/dashboard.html')) {
+      listItemLink.href = `./course-details.html?id=${course.id}`;
+    }
+    //   listItemLink.classList.add('list-group-item', 'list-group-item-action');
+    listItemLink.setAttribute('course-id', stringifiedId);
+    listItemLink.setAttribute('aria-current', 'true');
 
-      // List item title
-      const listItemTitle: HTMLHeadingElement = document.createElement('h5');
-      listItemTitle.classList.add('mb-1');
-      listItemTitle.textContent = course.title;
+    // List item title
+    const listItemTitle: HTMLHeadingElement = document.createElement('h5');
+    listItemTitle.classList.add('mb-1');
+    listItemTitle.textContent = course.title;
 
-      const listItemDate = document.createElement('small');
-      listItemDate.classList.add('ml-auto');
-      listItemDate.textContent = `Start Date: ${course.startDate.toString()}`;
-      listItemLink.appendChild(listItemTitle);
-      listItemWrapper.append(listItemLink, listItemDate);
+    const listItemDate = document.createElement('small');
+    listItemDate.classList.add('ml-auto');
+    listItemDate.textContent = `Start Date: ${course.startDate.toString()}`;
+    listItemLink.appendChild(listItemTitle);
+    listItemWrapper.append(listItemLink, listItemDate);
 
-      // // Book for student
-      // const bookBtn = document.createElement('button');
-      // bookBtn.textContent = 'Book';
-      // bookBtn.setAttribute('data-id', stringifiedId);
-      // bookBtn.classList.add('book-btn', 'btn', 'btn-primary', 'ml-2');
+    // // Book for student
+    // const bookBtn = document.createElement('button');
+    // bookBtn.textContent = 'Book';
+    // bookBtn.setAttribute('data-id', stringifiedId);
+    // bookBtn.classList.add('book-btn', 'btn', 'btn-primary', 'ml-2');
 
-      // Edit for admin
-      const editBtn = document.createElement('button');
-      editBtn.textContent = 'Edit';
-      editBtn.setAttribute('data-id', stringifiedId);
-      editBtn.classList.add('edit-btn', 'btn', 'btn-primary', 'ml-auto');
-      editBtn.onclick = () => navigateTo(`./edit-course.html?id=${course.id}`);
+    // Edit for admin
+    const editBtn = document.createElement('button');
+    editBtn.textContent = 'Edit';
+    editBtn.setAttribute('data-id', stringifiedId);
+    editBtn.classList.add('edit-btn', 'btn', 'btn-primary', 'ml-auto');
+    editBtn.onclick = () => navigateTo(`./edit-course.html?id=${course.id}`);
 
-      // Delete for admin
-      const deleteBtn = document.createElement('button');
-      deleteBtn.textContent = 'Delete';
-      deleteBtn.setAttribute('data-id', stringifiedId);
-      deleteBtn.classList.add('delete-btn', 'btn', 'btn-primary', 'ml-2');
-      deleteBtn.onclick = async () => {
-        await courseService.deleteEntity(course.id);
-        location.reload(); //TODO: change this
-      };
+    // Delete for admin
+    const deleteBtn = document.createElement('button');
+    deleteBtn.textContent = 'Delete';
+    deleteBtn.setAttribute('data-id', stringifiedId);
+    deleteBtn.classList.add('delete-btn', 'btn', 'btn-primary', 'ml-2');
+    deleteBtn.onclick = async () => {
+      await courseService.deleteEntity(course.id);
+      location.reload(); //TODO: change this
+    };
 
-      // if (getUserRole() === 'student') {
-      //   listItemWrapper.appendChild(bookBtn);
-      // }
-      if (getUserRole() === 'admin') {
-        listItemWrapper.append(editBtn, deleteBtn);
-      }
+    // if (getUserRole() === 'student') {
+    //   listItemWrapper.appendChild(bookBtn);
+    // }
+    if (getUserRole() === 'admin') {
+      listItemWrapper.append(editBtn, deleteBtn);
+    }
 
-      listContainer.append(listItemWrapper);
-      root.appendChild(listContainer);
-    });
-  }
+    listContainer.append(listItemWrapper);
+    root.appendChild(listContainer);
+  });
 };
 
 document.addEventListener('DOMContentLoaded', initPage);

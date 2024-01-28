@@ -1,10 +1,12 @@
 import { Course } from '../../models/Course.js';
 import EntityService from '../../services/entity-service.js';
 import config from '../../utils/config.js';
+import { renderResultMessage } from '../../utils/dom-helpers.js';
 import { convertForm } from '../../utils/helpers.js';
 
 const initPage = async () => {
   const form = document.getElementById('edit-course-form') as HTMLFormElement;
+  const editCourseMsg = document.getElementById('edit-course-msg');
   let courseId = location.search.split('=')[1];
 
   const courseService = new EntityService<any>(
@@ -13,7 +15,8 @@ const initPage = async () => {
 
   const getCourse = await courseService.getEntity(parseInt(courseId));
   const entries = new URLSearchParams(getCourse).entries();
-  // FIXME !!! Students gets deleted
+
+  // FIXME !!! Students gets overwritten and empty
   for (let [key, value] of entries) {
     console.log('key', key, 'value', value);
 
@@ -29,7 +32,9 @@ const initPage = async () => {
     const course = new FormData(form);
     const courseObj: Course = convertForm(course);
     courseService.updateEntity(parseInt(courseId), courseObj);
-    console.log(courseObj);
+
+    // TODO: change color to text-success
+    if (editCourseMsg) renderResultMessage(editCourseMsg, 'Course Updated');
   };
 
   form.addEventListener('submit', editCourse);

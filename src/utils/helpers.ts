@@ -3,7 +3,6 @@ const convertForm = <T>(formData: FormData): T => {
   return data as T;
 };
 
-// TODO: use this where it is needed
 const navigateTo = (path: string) => {
   window.location.href = path;
 };
@@ -22,12 +21,6 @@ const constructPath = (relativePath: string) => {
   } else {
     return `/src/pages/${relativePath}`;
   }
-  // const isRootIndex =
-  //   window.location.pathname.endsWith('index.html') ||
-  //   window.location.pathname === '/';
-
-  // const basePath = isRootIndex ? '/src/pages' : '';
-  // return `${basePath}/${relativePath}`;
 };
 
 export { convertForm, navigateTo, getUserRole, getAuthId, constructPath };

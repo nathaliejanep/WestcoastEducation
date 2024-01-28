@@ -1,6 +1,7 @@
-import { AuthenticatedUser, User } from '../../models/User.js';
+import { User } from '../../models/User.js';
 import AuthService from '../../services/auth-service.js';
 import config from '../../utils/config.js';
+import { renderResultMessage } from '../../utils/dom-helpers.js';
 import { constructPath, convertForm, navigateTo } from '../../utils/helpers.js';
 
 const initPage = async () => {
@@ -14,29 +15,18 @@ const initPage = async () => {
     let userObj: User = convertForm(user);
 
     const { email, password } = userObj;
-
+    const loginMsg = document.getElementById('login-msg');
     const isAuth = await authService.authenticate(email, password);
-    // TODO fix login func
-    // if admin go to admin
 
     if (isAuth) {
-      // redirect to student dash
       const authenticatedUser = authService.getAuthUser();
 
       if (authenticatedUser) {
-        console.log('Authentication successful');
         const path = constructPath('dashboard.html');
         navigateTo(path);
-        // if (authService.isAdmin(authenticatedUser)) {
-        //   const path = constructPath('admin.html');
-        //   navigateTo(path);
-        // } else {
-        //   const path = constructPath('dashboard.html');
-        //   navigateTo(path);
-        // }
       }
     } else {
-      console.log('Authentication failed');
+      if (loginMsg) renderResultMessage(loginMsg, 'Wrong username or password');
     }
   };
   loginForm.addEventListener('submit', authUser);

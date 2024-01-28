@@ -1,8 +1,10 @@
+import AuthService from '../../services/auth-service.js';
+import config from '../../utils/config.js';
 import { constructPath, getAuthId, getUserRole } from '../../utils/helpers.js';
 
 const initPage = () => {
   const currentPage = window.location.pathname;
-
+  const authService = new AuthService(`${config.BASE_URL}${config.USERS_PATH}`);
   const nav = document.getElementById('nav') as HTMLDivElement;
   nav.classList.add('navbar', 'navbar-expand-lg', 'navbar-light', 'bg-light');
 
@@ -99,6 +101,8 @@ const initPage = () => {
   logoutLink.classList.add('nav-link');
   logoutLink.href = constructPath('index.html');
   logoutLink.textContent = 'Log Out';
+  logoutLink.onclick = () => authService.logout();
+
   collapseContent.appendChild(ul);
   logoutLi.appendChild(logoutLink);
 

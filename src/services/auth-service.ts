@@ -40,16 +40,16 @@ export default class AuthService extends EntityService<User> {
     return users.some((user) => user.email === email);
   }
 
-  // XXX Delete if not being used
-  isAuth(): boolean {
-    return !!this.authenticatedUser;
-  }
+  // // XXX Delete if not being used
+  // isAuth(): boolean {
+  //   return !!this.authenticatedUser;
+  // }
 
-  // TODO: Create method for admin
-  isAdmin(user: AuthenticatedUser) {
-    // localStorage.setItem('userRole', 'isAdmin');
-    return 'isAdmin' in user;
-  }
+  // // TODO: Create method for admin
+  // isAdmin(user: AuthenticatedUser) {
+  //   // localStorage.setItem('userRole', 'isAdmin');
+  //   return 'isAdmin' in user;
+  // }
 
   // XXX Delete if not being used
   getAuthUser(): AuthenticatedUser | null {

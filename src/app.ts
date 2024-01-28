@@ -17,11 +17,12 @@ const initPage = async () => {
   // courseService.getEntity(2);
   // courseService.deleteCourse(27);
 
-  const logout = document.getElementById('logout');
-  if (logout) {
-    logout.addEventListener('click', (e) => {
-      console.log('click');
-    });
-  }
+  // XXX Delete very redundant
+  // const logout = document.getElementById('logout');
+  // if (logout) {
+  //   logout.addEventListener('click', (e) => {
+  //     console.log('click');
+  //   });
+  // }
 };
 document.addEventListener('DOMContentLoaded', initPage);

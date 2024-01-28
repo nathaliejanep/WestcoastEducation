@@ -1,8 +1,6 @@
 import { Course } from '../../models/Course.js';
 import { User } from '../../models/User.js';
-import BookingService from '../../services/booking-service.js';
 import CourseService from '../../services/course-service.js';
-import EntityService from '../../services/entity-service.js';
 import UserService from '../../services/user-service.js';
 import config from '../../utils/config.js';
 

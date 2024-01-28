@@ -25,17 +25,15 @@ const initPage = async () => {
 
       if (authenticatedUser) {
         console.log('Authentication successful');
-
-        if (authService.isAdmin(authenticatedUser)) {
-          const path = constructPath('admin.html');
-          navigateTo(path);
-        } else {
-          const path = constructPath('dashboard.html');
-          navigateTo(path);
-          // location.href = `./dashboard.html`;
-
-          console.log('not admin');
-        }
+        const path = constructPath('dashboard.html');
+        navigateTo(path);
+        // if (authService.isAdmin(authenticatedUser)) {
+        //   const path = constructPath('admin.html');
+        //   navigateTo(path);
+        // } else {
+        //   const path = constructPath('dashboard.html');
+        //   navigateTo(path);
+        // }
       }
     } else {
       console.log('Authentication failed');

@@ -15,10 +15,19 @@ const getUserRole = () => {
 const getAuthId = () => {
   return localStorage.getItem('auth');
 };
+
 const constructPath = (relativePath: string) => {
-  const isRootIndex = window.location.pathname.endsWith('index.html');
-  const basePath = isRootIndex ? '' : '/src/pages';
-  return `${basePath}/${relativePath}`;
+  if (relativePath === 'index.html') {
+    return `/${relativePath}`;
+  } else {
+    return `/src/pages/${relativePath}`;
+  }
+  // const isRootIndex =
+  //   window.location.pathname.endsWith('index.html') ||
+  //   window.location.pathname === '/';
+
+  // const basePath = isRootIndex ? '/src/pages' : '';
+  // return `${basePath}/${relativePath}`;
 };
 
 export { convertForm, navigateTo, getUserRole, getAuthId, constructPath };

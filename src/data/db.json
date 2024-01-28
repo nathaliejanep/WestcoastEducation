@@ -361,6 +361,12 @@
       "isAdmin": false,
       "role": "student",
       "id": 8
+    },
+    {
+      "name": "g",
+      "email": "g@m",
+      "password": "123",
+      "id": 9
     }
   ]
 }

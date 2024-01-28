@@ -93,6 +93,21 @@ const initPage = () => {
   collapseContent.appendChild(ul);
   studentsLi.appendChild(studentsLink);
 
+  // Add Course
+  const addCourseLi: HTMLLIElement = document.createElement('li');
+  addCourseLi.classList.add('nav-item');
+
+  const addCourseLink: HTMLAnchorElement = document.createElement('a');
+  addCourseLink.classList.add('nav-link');
+  addCourseLink.classList.toggle(
+    'active',
+    currentPage === '/src/pages/add-course.html'
+  );
+  addCourseLink.href = constructPath('add-course.html');
+  addCourseLink.textContent = 'Add Course';
+  collapseContent.appendChild(ul);
+  addCourseLi.appendChild(addCourseLink);
+
   // Log Out
   const logoutLi: HTMLLIElement = document.createElement('li');
   coursesLi.classList.add('nav-item');
@@ -134,7 +149,7 @@ const initPage = () => {
   dropdownUserLi.appendChild(dropdownMenuDiv);
 
   if (getAuthId() && getUserRole() === 'admin') {
-    ul.appendChild(studentsLi);
+    ul.append(studentsLi, addCourseLi);
   }
 
   if (getAuthId() && getUserRole() === 'student') {

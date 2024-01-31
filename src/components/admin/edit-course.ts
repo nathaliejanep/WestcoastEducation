@@ -15,10 +15,9 @@ const initPage = async () => {
 
   const getCourse = await courseService.getEntity(parseInt(courseId));
   const entries = new URLSearchParams(getCourse).entries();
+  const enrolledStudents: number[] = getCourse.students;
 
   for (let [key, value] of entries) {
-    console.log('key', key, 'value', value);
-
     if (key !== 'id' && key !== 'students') {
       const input = form.elements.namedItem(key) as HTMLInputElement;
       input.value = value;
@@ -30,6 +29,7 @@ const initPage = async () => {
 
     const course = new FormData(form);
     const courseObj: Course = convertForm(course);
+    courseObj.students = enrolledStudents;
     courseService.updateEntity(parseInt(courseId), courseObj);
 
     // TODO: change color to text-success

@@ -19,3 +19,6 @@ dist/
 
 # Sensitive files
 .env
+
+# Except for jest.config.js
+!jest.config.js

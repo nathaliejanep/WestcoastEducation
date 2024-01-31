@@ -1,4 +1,4 @@
-import { constructPath, convertForm } from '../src/utils/helpers';
+import { constructPath, convertForm } from '../utils/helpers';
 
 describe('constructPath function', () => {
   test('should return correct path for "index.html', () => {

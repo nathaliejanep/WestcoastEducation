@@ -21,12 +21,12 @@ Before you begin, ensure you have met the following requirements:
 
 ## Installing 
 To install the project dependencies, run:
-```console
+```bash
 npm install
 ```
 ## Starting the Server
 To start the JSON server, run:
-```console
+```bash
 npm run server
 ```
 
@@ -35,6 +35,13 @@ To log in, use the following credentials:
 
 - Admin: admin@mail.com, Password: 123
 - Student: student@mail.com, Password: 123
+
+## Testing
+West Coast Education Platform uses Jest as its testing framework to ensure code correctness and reliability. 
+To run all the tests and provide you with feedback on the overall health of the project run:
+```bash
+npm test
+```
 
 ## Built With
 - Vanilla TypeScript

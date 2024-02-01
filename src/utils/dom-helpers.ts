@@ -21,11 +21,28 @@ const createHeading = (headingText: string) => {
   return heading;
 };
 
-const createListItem = (id: string, title: string,path:string) => {
-  const listItem = document.createElement('div');
-  // TODO coruse-id needs to be global param
-  listItem.setAttribute('course-id', id);
+// Container for whole list
+const createListContainer = () => {
+  const listContainer: HTMLDivElement = document.createElement('div');
+  listContainer.classList.add('list-group');
+  return listContainer;
+};
 
+/**
+ * Function to find element by attribute=id and remove from UI
+ * @param id - set custom attribute name
+ * @param title - title text of item
+ * @param path - path to item e.g `course-details.html?id=${course.id}`
+ * @returns listItem 'div'
+ */
+const createListItem = (
+  attributeId: string,
+  id: string,
+  title: string,
+  path: string
+) => {
+  const listItem: HTMLDivElement = document.createElement('div');
+  listItem.setAttribute(attributeId, id);
   listItem.classList.add(
     'd-flex',
     'w-100',
@@ -36,9 +53,7 @@ const createListItem = (id: string, title: string,path:string) => {
 
   // Link container for list item title
   const listItemLink: HTMLAnchorElement = document.createElement('a');
-  // TODO needs to be gloval path
   listItemLink.href = constructPath(path);
-
   listItemLink.setAttribute('aria-current', 'true');
 
   const listItemTitle: HTMLHeadingElement = document.createElement('h5');
@@ -51,28 +66,35 @@ const createListItem = (id: string, title: string,path:string) => {
   return listItem;
 };
 
+// -------------------- BUTTONS -------------------- //
 // TODO make delete red and change classes to else w ml-2
 const createBtn = (btnText: string) => {
-  const button = document.createElement('button');
+  const button: HTMLButtonElement = document.createElement('button');
   button.textContent = btnText;
   button.classList.add('btn', 'btn-primary');
 
   return button;
 };
 
-// TODO decide if event here or not
-const createEditBtn = (id: number) => {
-  const editBtn = createBtn('Edit');
-  const editPath = constructPath(`edit-course.html?id=${id}`);
-  editBtn.addEventListener('click', () => navigateTo(editPath));
-
-  return editBtn;
+const createDetailImg = (imageUrl: string) => {
+  const image: HTMLImageElement = document.createElement('img');
+  image.style.height = '500px';
+  image.src = `../../src/assets/images/${imageUrl}`;
+  return image;
 };
 
+const createTextP = (textContent: string) => {
+  const p = document.createElement('p');
+  p.classList.add('text-center');
+  p.textContent = textContent;
+  return p;
+};
 export {
   renderResultMessage,
   createHeading,
+  createListContainer,
   createListItem,
   createBtn,
-  createEditBtn,
+  createDetailImg,
+  createTextP,
 };

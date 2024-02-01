@@ -20,6 +20,7 @@ const initPage = async () => {
 
     studentList.forEach((student) => {
       const stringifiedId = student.id.toString();
+      // TODO create functionality and student details
 
       // Wrapper for list item (link) and (buttons)
       const listItemWrapper = document.createElement('div');

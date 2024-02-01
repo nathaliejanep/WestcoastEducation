@@ -1,6 +1,7 @@
 import { User } from '../../models/User.js';
 import UserService from '../../services/user-service.js';
 import config from '../../utils/config.js';
+import { createHeading } from '../../utils/dom-helpers.js';
 import { constructPath, navigateTo } from '../../utils/helpers.js';
 
 const initPage = async () => {
@@ -9,10 +10,9 @@ const initPage = async () => {
   const root = document.getElementById('root') as HTMLDivElement;
 
   if (root) {
-    const courseH: HTMLHeadingElement = document.createElement('h1');
-    courseH.innerText = 'Students';
+    const studentHeading = createHeading('Students');
 
-    root.appendChild(courseH);
+    root.appendChild(studentHeading);
 
     // Container for whole list
     const listContainer: HTMLDivElement = document.createElement('div');

@@ -1,15 +1,19 @@
 import CourseService from '../../services/course-service.js';
 import UserService from '../../services/user-service.js';
-import config from '../../utils/config.js';
-import { renderResultMessage } from '../../utils/dom-helpers.js';
-import { getUserRole, navigateTo } from '../../utils/helpers.js';
+import c from '../../utils/config.js';
+import {
+  createBtn,
+  createEditBtn,
+  createHeading,
+  renderResultMessage,
+} from '../../utils/dom-helpers.js';
+import { deleteCourse } from '../../utils/event-helpers.js';
+import { constructPath, getUserRole, navigateTo } from '../../utils/helpers.js';
+
+const courseService = new CourseService(`${c.BASE_URL}${c.COURSES_PATH}`);
+const userService = new UserService(`${c.BASE_URL}${c.USERS_PATH}`);
 
 const initPage = async () => {
-  const courseService = new CourseService(
-    `${config.BASE_URL}${config.COURSES_PATH}`
-  );
-  const userService = new UserService(`${config.BASE_URL}${config.USERS_PATH}`);
-
   let courseId = +location.search.split('=')[1];
   const course = await courseService.getEntity(courseId);
   const studentIds = course.students;
@@ -25,8 +29,7 @@ const initPage = async () => {
     );
 
     // Course Title
-    const courseTitle = document.createElement('h1');
-    courseTitle.textContent = course.title;
+    const courseTitleHeading = createHeading(course.title);
 
     // Course Image
     const courseImg = document.createElement('img');
@@ -71,12 +74,8 @@ const initPage = async () => {
     });
 
     // Book for student
-    const bookBtn = document.createElement('button');
-    bookBtn.textContent = 'Book';
-    // bookBtn.setAttribute('data-id', courseId);
-    bookBtn.classList.add('book-btn', 'btn', 'btn-primary');
-
-    bookBtn.onclick = async () => {
+    const bookBtn = createBtn('Book');
+    bookBtn.addEventListener('click', async () => {
       const authUserId = localStorage.getItem('auth');
       if (authUserId) {
         courseService.enrollStudent(+courseId, +authUserId);
@@ -89,28 +88,26 @@ const initPage = async () => {
 
         renderResultMessage(messageContainer, resultMessage);
       }
-    };
+    });
 
     // Edit for admin
-    const editBtn = document.createElement('button');
-    editBtn.textContent = 'Edit';
-    editBtn.classList.add('edit-btn', 'btn', 'btn-primary');
-    editBtn.onclick = () => navigateTo(`./edit-course.html?id=${courseId}`);
+    const editBtn = createEditBtn(course.id);
+    // createBtn('Edit');
+    // const editPath = constructPath(`edit-course.html?id=${course.id}`);
+    // editBtn.addEventListener('click', () => navigateTo(editPath));
 
-    // Delete for admin
-    const deleteBtn = document.createElement('button');
-    deleteBtn.textContent = 'Delete';
-    deleteBtn.classList.add('delete-btn', 'btn', 'btn-primary');
-
-    deleteBtn.onclick = () => {
-      courseService.deleteEntity(courseId);
-      navigateTo('./dashboard.html');
-    };
+    const deleteBtn = createBtn('Delete');
+    const deletePath = constructPath('dashboard.html');
+    deleteBtn.classList.add('ml-2');
+    deleteBtn.addEventListener('click', () => {
+      deleteCourse(course.id);
+      navigateTo(deletePath);
+    });
 
     const messageContainer = document.createElement('div');
 
     courseContainer.append(
-      courseTitle,
+      courseTitleHeading,
       courseImg,
       courseDescription,
       courseClassroom,
@@ -122,7 +119,12 @@ const initPage = async () => {
       courseContainer.appendChild(bookBtn);
     }
     if (getUserRole() === 'admin') {
-      courseContainer.append(courseStudentTitle, courseStudentsUl, deleteBtn);
+      courseContainer.append(
+        courseStudentTitle,
+        courseStudentsUl,
+        editBtn,
+        deleteBtn
+      );
     }
     courseContainer.appendChild(messageContainer);
     root.appendChild(courseContainer);
